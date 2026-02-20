@@ -23,7 +23,6 @@ doc/api/
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
-build/
 
 # [ignorium] [JetBrains IDE]
 .idea/libraries/
