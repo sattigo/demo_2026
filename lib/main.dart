@@ -1,5 +1,5 @@
-import 'package:demo_2026/app/app.dart';
-import 'package:demo_2026/demo_root_widget.dart';
+import 'package:demo_2026/feature/app/app.dart';
+import 'package:demo_2026/feature/demo_root_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

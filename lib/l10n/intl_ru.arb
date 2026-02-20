@@ -1,0 +1,13 @@
+{
+    "@@locale": "ru",
+    "aboutApp": "О приложении",
+    "@aboutApp": {},
+  "initialScreen_notClickable_original_appBarText": "Инициализационный экран",
+  "@initialScreen_notClickable_original_appBarText": {},
+  "initialScreen_clickable_original_toForkScreenButton": "На \"fork page\"",
+  "@initialScreen_clickable_original_toForkScreenButton": {},
+  "forkScreen_notClickable_original_appBarText": "Экран вилки",
+  "@forkScreen_notClickable_original_appBarText": {},
+  "forkScreen_notClickable_original_centerText": "Центральный текст",
+  "@forkScreen_notClickable_original_centerText": {}
+}

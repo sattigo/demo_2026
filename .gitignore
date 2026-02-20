@@ -11,6 +11,9 @@
 *.generated.dart
 *.gr.dart
 
+## Codegen
+generated/
+
 # [ignorium] [Dart project]
 .dart_tool/
 build/

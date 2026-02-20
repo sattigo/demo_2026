@@ -1,0 +1,13 @@
+{
+  "@@locale": "en",
+  "aboutApp": "About application",
+  "@aboutApp": {},
+  "initialScreen_notClickable_original_appBarText": "Initial screen widget",
+  "@initialScreen_notClickable_original_appBarText": {},
+  "initialScreen_clickable_original_toForkScreenButton": "To \"fork page\"",
+  "@initialScreen_clickable_original_toForkScreenButton": {},
+  "forkScreen_notClickable_original_appBarText": "Fork screen widget",
+  "@forkScreen_notClickable_original_appBarText": {},
+  "forkScreen_notClickable_original_centerText": "Centered text",
+  "@forkScreen_notClickable_original_centerText": {}
+}
