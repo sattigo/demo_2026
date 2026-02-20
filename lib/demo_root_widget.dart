@@ -10,15 +10,16 @@ class DemoRootWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final router = App.mainRouter;
     return Platform(
       androidBuilder: (context) => MaterialApp.router(
-        routerConfig: App.mainRouter,
+        routerConfig: router,
         builder: _appBuilder,
         debugShowCheckedModeBanner: false,
         title: 'Yangi Finance',
       ),
       iOSBuilder: (context) => CupertinoApp.router(
-        routerConfig: App.mainRouter,
+        routerConfig: router,
         builder: _appBuilder,
         debugShowCheckedModeBanner: false,
         title: 'Yangi Finance',

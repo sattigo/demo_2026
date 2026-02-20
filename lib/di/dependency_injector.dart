@@ -1,4 +1,5 @@
 import 'package:demo_2026/platform/platform_type_service.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 
 class DependencyInjector {
@@ -14,6 +15,8 @@ class DependencyInjector {
     );
 
     await instance._getIt.allReady();
+
+    instance._getIt.registerSingleton<GlobalKey<NavigatorState>>(GlobalKey<NavigatorState>());
 
     return instance;
   }

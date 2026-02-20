@@ -3,7 +3,7 @@ import 'package:demo_2026/navigation/main_router.dart';
 import 'package:go_router/go_router.dart';
 
 class App {
-  static final GoRouter _mainRouter = MainRouter().router;
+  static final GoRouter _mainRouter = MainRouter();
 
   static late final DependencyInjector _injector;
 
