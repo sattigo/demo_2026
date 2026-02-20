@@ -1,5 +1,5 @@
+import 'package:demo_2026/app/main_router.dart';
 import 'package:demo_2026/di/dependency_injector.dart';
-import 'package:demo_2026/navigation/main_router.dart';
 import 'package:go_router/go_router.dart';
 
 class App {

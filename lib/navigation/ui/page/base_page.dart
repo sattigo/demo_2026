@@ -1,5 +1,5 @@
-import 'package:demo_2026/navigation/ui/cupertion/route.dart';
-import 'package:demo_2026/navigation/ui/material/route.dart';
+import 'package:demo_2026/navigation/ui/routes/cupertino_route.dart';
+import 'package:demo_2026/navigation/ui/routes/material_route.dart';
 import 'package:demo_2026/navigation/ui/transitions/base_transition_contract.dart';
 import 'package:demo_2026/platform/platform_type_service.dart';
 import 'package:flutter/cupertino.dart';

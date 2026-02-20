@@ -1,4 +1,3 @@
-import 'package:demo_2026/navigation/ui/page/base_page.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
@@ -23,7 +22,7 @@ abstract class AppShellRoute extends AppRoute<ShellRoute> {
 }
 
 abstract class AppGoRoute<T> extends AppRoute<GoRoute> {
-  BasePage buildPage(BuildContext context, GoRouterState state);
+  Page<dynamic> buildPage(BuildContext context, GoRouterState state);
 
   @override
   GoRoute buildRoute({List<RouteBase> routes = const []}) {
