@@ -12,6 +12,6 @@ class App {
   static DependencyInjector get injector => _injector;
 
   static Future<void> init() async {
-    _injector = await DependencyInjector.init();
+    _injector = await DependencyInjector.create();
   }
 }
