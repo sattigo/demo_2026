@@ -15,7 +15,8 @@ class DefaultDioResponseHandler extends DioResponseHandlerContract {
   DefaultDioResponseHandler({required super.failureExtractor});
 
   Result<T, Failure> call<T>(Response<dynamic> response) {
-    final failure = failureExtractor.extract(response) ?? const Failure.general();
+    final failure =
+        failureExtractor.extract(response) ?? const Failure.general();
     return Result.failure(failure);
   }
 }

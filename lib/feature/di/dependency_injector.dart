@@ -9,18 +9,25 @@ class DependencyInjector {
   static DependencyInjector? _instance;
 
   static DependencyInjector get instance {
-    assert(_instance != null, 'DependencyInjector is not initialized. Call init() first.');
+    assert(
+      _instance != null,
+      'DependencyInjector is not initialized. Call init() first.',
+    );
     return _instance!;
   }
 
   final GetIt _getIt = GetIt.instance;
 
   Future<void> _init() async {
-    _getIt.registerSingletonAsync<PlatformTypeService>(PlatformTypeService.getInstance);
+    _getIt.registerSingletonAsync<PlatformTypeService>(
+      PlatformTypeService.getInstance,
+    );
 
     await _getIt.allReady();
 
-    _getIt.registerSingleton<GlobalKey<NavigatorState>>(GlobalKey<NavigatorState>());
+    _getIt.registerSingleton<GlobalKey<NavigatorState>>(
+      GlobalKey<NavigatorState>(),
+    );
     _getIt.registerSingleton<BaseOptions>(
       BaseOptions(
         baseUrl: 'https://google.com',

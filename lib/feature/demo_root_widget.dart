@@ -38,6 +38,9 @@ class DemoRootWidget extends StatelessWidget {
   Widget _appBuilder(BuildContext context, Widget? child) {
     const maxTextScale = 1.25;
 
-    return TextScaleFactorProvider(maxTextScale: maxTextScale, child: FToastBuilder()(context, child));
+    return TextScaleFactorProvider(
+      maxTextScale: maxTextScale,
+      child: FToastBuilder()(context, child),
+    );
   }
 }

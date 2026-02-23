@@ -76,8 +76,13 @@ class BaseCupertinoPageRoute extends CupertinoPageRoute<dynamic> {
     return true;
   }
 
-  static _CupertinoBackGestureController<T> _startPopGesture<T>(PageRoute<T> route) {
-    assert(_isPopGestureEnabled(route), 'Должен быть разрешен жест возврата назад для данного маршрута.');
+  static _CupertinoBackGestureController<T> _startPopGesture<T>(
+    PageRoute<T> route,
+  ) {
+    assert(
+      _isPopGestureEnabled(route),
+      'Должен быть разрешен жест возврата назад для данного маршрута.',
+    );
 
     return _CupertinoBackGestureController<T>(
       navigator: route.navigator!,
@@ -87,21 +92,21 @@ class BaseCupertinoPageRoute extends CupertinoPageRoute<dynamic> {
 
   @override
   Widget buildTransitions(
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
-      Widget child,
-      ) {
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
     return _CupertinoBackGestureDetector(
       enabledCallback: () => _isPopGestureEnabled(this),
       onStartPopGesture: () => _startPopGesture(this),
       child: isPopGestureInProgress(this)
           ? CupertinoPageTransition(
-        primaryRouteAnimation: animation,
-        secondaryRouteAnimation: secondaryAnimation,
-        linearTransition: true,
-        child: child,
-      )
+              primaryRouteAnimation: animation,
+              secondaryRouteAnimation: secondaryAnimation,
+              linearTransition: true,
+              child: child,
+            )
           : transition.animate(context, animation, secondaryAnimation, child),
     );
   }
@@ -117,7 +122,7 @@ class _CupertinoBackGestureDetector<T> extends StatefulWidget {
     required this.child,
     super.key,
   }) : _onStartPopGesture = onStartPopGesture,
-        _enabledCallback = enabledCallback;
+       _enabledCallback = enabledCallback;
 
   final Widget child;
 
@@ -126,10 +131,12 @@ class _CupertinoBackGestureDetector<T> extends StatefulWidget {
   final ValueGetter<_CupertinoBackGestureController<T>> _onStartPopGesture;
 
   @override
-  _CupertinoBackGestureDetectorState<T> createState() => _CupertinoBackGestureDetectorState<T>();
+  _CupertinoBackGestureDetectorState<T> createState() =>
+      _CupertinoBackGestureDetectorState<T>();
 }
 
-class _CupertinoBackGestureDetectorState<T> extends State<_CupertinoBackGestureDetector<T>> {
+class _CupertinoBackGestureDetectorState<T>
+    extends State<_CupertinoBackGestureDetector<T>> {
   _CupertinoBackGestureController<T>? _backGestureController;
 
   late HorizontalDragGestureRecognizer _recognizer;
@@ -152,20 +159,35 @@ class _CupertinoBackGestureDetectorState<T> extends State<_CupertinoBackGestureD
 
   void _handleDragStart(DragStartDetails details) {
     assert(mounted, 'Должно быть mounted');
-    assert(_backGestureController == null, 'backGestureController не должен быть null');
+    assert(
+      _backGestureController == null,
+      'backGestureController не должен быть null',
+    );
     _backGestureController = widget._onStartPopGesture();
   }
 
   void _handleDragUpdate(DragUpdateDetails details) {
     assert(mounted, 'Должно быть mounted');
-    assert(_backGestureController != null, 'backGestureController не должен быть null');
-    _backGestureController!.dragUpdate(_convertToLogical(details.primaryDelta! / context.size!.width));
+    assert(
+      _backGestureController != null,
+      'backGestureController не должен быть null',
+    );
+    _backGestureController!.dragUpdate(
+      _convertToLogical(details.primaryDelta! / context.size!.width),
+    );
   }
 
   void _handleDragEnd(DragEndDetails details) {
     assert(mounted, 'Должно быть mounted');
-    assert(_backGestureController != null, 'backGestureController не должен быть null');
-    _backGestureController!.dragEnd(_convertToLogical(details.velocity.pixelsPerSecond.dx / context.size!.width));
+    assert(
+      _backGestureController != null,
+      'backGestureController не должен быть null',
+    );
+    _backGestureController!.dragEnd(
+      _convertToLogical(
+        details.velocity.pixelsPerSecond.dx / context.size!.width,
+      ),
+    );
     _backGestureController = null;
   }
 
@@ -194,7 +216,10 @@ class _CupertinoBackGestureDetectorState<T> extends State<_CupertinoBackGestureD
 
   @override
   Widget build(BuildContext context) {
-    assert(debugCheckHasDirectionality(context), 'Виджет должен вызываться только в соответствующем контексте');
+    assert(
+      debugCheckHasDirectionality(context),
+      'Виджет должен вызываться только в соответствующем контексте',
+    );
     // For devices with notches, the drag area needs to be larger on the side
     // that has the notch.
     var dragAreaWidth = Directionality.of(context) == TextDirection.ltr
@@ -210,7 +235,10 @@ class _CupertinoBackGestureDetectorState<T> extends State<_CupertinoBackGestureD
           width: dragAreaWidth,
           top: 0,
           bottom: 0,
-          child: Listener(onPointerDown: _handlePointerDown, behavior: HitTestBehavior.translucent),
+          child: Listener(
+            onPointerDown: _handlePointerDown,
+            behavior: HitTestBehavior.translucent,
+          ),
         ),
       ],
     );
@@ -221,7 +249,10 @@ class _CupertinoBackGestureController<T> {
   /// Creates a controller for an iOS-style back gesture.
   ///
   /// The [navigator] and [controller] arguments must not be null.
-  _CupertinoBackGestureController({required this.navigator, required this.controller}) {
+  _CupertinoBackGestureController({
+    required this.navigator,
+    required this.controller,
+  }) {
     navigator.didStartUserGesture();
   }
 
@@ -260,7 +291,11 @@ class _CupertinoBackGestureController<T> {
       // We want to cap the animation time, but we want to use a linear curve
       // to determine it.
       final droppedPageForwardAnimationTime = min(
-        lerpDouble(_kMaxDroppedSwipePageForwardAnimationTime, 0, controller.value)!.floor(),
+        lerpDouble(
+          _kMaxDroppedSwipePageForwardAnimationTime,
+          0,
+          controller.value,
+        )!.floor(),
         _kMaxPageBackAnimationTime,
       );
       controller.animateTo(

@@ -1,4 +1,3 @@
-
 import 'package:demo_2026/feature/navigation/ui/transitions/base_transition_contract.dart';
 import 'package:flutter/material.dart';
 
@@ -15,11 +14,11 @@ class BaseMaterialPageRoute extends MaterialPageRoute<dynamic> {
 
   @override
   Widget buildTransitions(
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
-      Widget child,
-      ) {
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
     return transition.animate(context, animation, secondaryAnimation, child);
   }
 

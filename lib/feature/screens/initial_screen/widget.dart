@@ -15,10 +15,16 @@ class InitialScreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(S.of(context).initialScreen_notClickable_original_appBarText)),
+      appBar: AppBar(
+        title: Text(
+          S.of(context).initialScreen_notClickable_original_appBarText,
+        ),
+      ),
       body: Center(
         child: MaterialButton(
-          child: Text(S.of(context).initialScreen_clickable_original_toForkScreenButton),
+          child: Text(
+            S.of(context).initialScreen_clickable_original_toForkScreenButton,
+          ),
           onPressed: () => _onButtonPressed(context),
         ),
       ),

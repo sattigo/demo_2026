@@ -29,8 +29,8 @@ class TextScaleFactorProvider extends StatelessWidget {
     double maxTextScale = 1.0,
     super.key,
   }) : _child = child,
-        _minTextScale = minTextScale,
-        _maxTextScale = maxTextScale;
+       _minTextScale = minTextScale,
+       _maxTextScale = maxTextScale;
 
   /// Дочерний виджет
   final Widget _child;
