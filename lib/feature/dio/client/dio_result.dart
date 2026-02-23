@@ -1,10 +1,10 @@
+import 'package:demo_2026/feature/dio/client/default_dio_failure_exception.dart';
 import 'package:demo_2026/feature/dio/client/dio_failure.build.dart';
 import 'package:demo_2026/feature/dio/client/dio_result_failure_handler.dart';
 import 'package:demo_2026/feature/dio/client/dio_result_response_handler.dart';
 import 'package:demo_2026/feature/failure/failure.build.dart';
 import 'package:demo_2026/feature/result/result.build.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/widgets.dart';
 
 part 'dio_status_code_constans.dart';
 
@@ -26,7 +26,7 @@ class DioResult {
         'Wrong "onStatusCodes" into $DioResult.when() function',
       );
     } on Object catch (exception, stackTrace) {
-      debugPrint('$exception\n$stackTrace');
+      throw DefaultDioFailureException('$exception\n$stackTrace');
     }
   }
 
