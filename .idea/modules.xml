@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/demo_2026.iml" filepath="$PROJECT_DIR$/demo_2026.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/demo_2026_android.iml" filepath="$PROJECT_DIR$/android/demo_2026_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/app/melos_demo_2026.iml" filepath="$PROJECT_DIR$/packages/app/melos_demo_2026.iml" />
+      <module fileurl="file://$PROJECT_DIR$/melos_demo_2026.iml" filepath="$PROJECT_DIR$/melos_demo_2026.iml" />
     </modules>
   </component>
 </project>
