@@ -1,7 +1,8 @@
-name: demo_2026
+name: 'demo_2026'
 
 packages:
-  - packages/**
+  - ./**
+  - .
 
 command:
   bootstrap:
