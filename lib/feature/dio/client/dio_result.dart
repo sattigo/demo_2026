@@ -17,14 +17,11 @@ class DioResult {
        _defaultFailureHandler = defaultFailureHandler,
        _result = result;
 
-  static void Function() invalidStatusCodeHandler =
-      _defaultInvalidStatusCodeHandler;
+  static void Function() invalidStatusCodeHandler = _defaultInvalidStatusCodeHandler;
 
   static void _defaultInvalidStatusCodeHandler() {
     try {
-      throw UnimplementedError(
-        'Wrong "onStatusCodes" into $DioResult.when() function',
-      );
+      throw UnimplementedError('Wrong "onStatusCodes" into $DioResult.when() function');
     } on Object catch (exception, stackTrace) {
       throw DefaultDioFailureException('$exception\n$stackTrace');
     }
@@ -35,10 +32,8 @@ class DioResult {
   final DioFailureHandlerContract _defaultFailureHandler;
 
   Result<T, Failure> when<T>({
-    Map<dynamic, Result<T, Failure> Function(Response<dynamic> response)>?
-    onStatusCodes,
-    Result<T, Failure> Function(int statusCode, Response<dynamic> response)?
-    defaultStatusCodeHandler,
+    Map<dynamic, Result<T, Failure> Function(Response<dynamic> response)>? onStatusCodes,
+    Result<T, Failure> Function(int statusCode, Response<dynamic> response)? defaultStatusCodeHandler,
     Failure? Function(DioFailure failure)? onFailure,
     Failure Function(DioFailure failure)? defaultFailureHandler,
   }) {
@@ -62,10 +57,8 @@ class DioResult {
 
   Result<T, Failure> _onSuccess<T>({
     required Response<dynamic> data,
-    Map<dynamic, Result<T, Failure> Function(Response<dynamic> response)>?
-    onStatusCodes,
-    Result<T, Failure> Function(int statusCode, Response<dynamic> response)?
-    defaultStatusCodeHandler,
+    Map<dynamic, Result<T, Failure> Function(Response<dynamic> response)>? onStatusCodes,
+    Result<T, Failure> Function(int statusCode, Response<dynamic> response)? defaultStatusCodeHandler,
     Failure? Function(DioFailure failure)? onFailure,
     Failure Function(DioFailure failure)? defaultFailureHandler,
   }) {
@@ -80,8 +73,7 @@ class DioResult {
     }
 
     if (onStatusCodes == null || onStatusCodes.isEmpty) {
-      return defaultStatusCodeHandler?.call(responseStatusCode, data) ??
-          _defaultResponseHandler.call(data);
+      return defaultStatusCodeHandler?.call(responseStatusCode, data) ?? _defaultResponseHandler.call(data);
     }
 
     final statusCodes = onStatusCodes.keys;
@@ -106,8 +98,7 @@ class DioResult {
       }
     }
 
-    return defaultStatusCodeHandler?.call(responseStatusCode, data) ??
-        _defaultResponseHandler.call(data);
+    return defaultStatusCodeHandler?.call(responseStatusCode, data) ?? _defaultResponseHandler.call(data);
   }
 
   Result<T, Failure> _onFailure<T>({
@@ -116,9 +107,7 @@ class DioResult {
     Failure Function(DioFailure failure)? defaultFailureHandler,
   }) {
     final resultFailure =
-        onFailure?.call(error) ??
-        defaultFailureHandler?.call(error) ??
-        _defaultFailureHandler.call(error);
+        onFailure?.call(error) ?? defaultFailureHandler?.call(error) ?? _defaultFailureHandler.call(error);
     return Result<T, Failure>.failure(resultFailure);
   }
 }
