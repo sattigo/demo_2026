@@ -1,6 +1,6 @@
 import 'package:demo_2026/feature/navigation/router/extension.dart';
 import 'package:demo_2026/feature/screens/fork_screen/route.dart';
-import 'package:demo_2026/feature/screens/initial_screen/bloc/bloc.build.dart';
+import 'package:demo_2026/feature/screens/initial_screen/ui/bloc/bloc.build.dart';
 import 'package:demo_2026/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
