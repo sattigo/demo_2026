@@ -7,8 +7,8 @@ class RecipeApiTransformer extends ChainTransformer<LinkedHashMap<String, dynami
   @override
   List<RecipeApi>? transform(LinkedHashMap<String, dynamic> inParam) {
     final resultList = <RecipeApi>[];
-    final list = inParam['recipes'] as List<Map<String, dynamic>>;
-    for (final item in list) {
+    final list = inParam['recipes'] as List<dynamic>;
+    for (final (item as Map<String, dynamic>) in list) {
       resultList.add(RecipeApi.fromJson(item));
     }
     return resultList;

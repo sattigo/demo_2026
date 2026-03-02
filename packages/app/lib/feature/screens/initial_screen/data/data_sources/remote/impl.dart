@@ -30,8 +30,8 @@ class InitialScreenRemoteDataSourceImpl implements InitialScreenRemoteDataSource
             } else {
               return const Result.failure(Failure.general());
             }
-          } on Object catch (_) {
-            return const Result.failure(Failure.general());
+          } on Object catch (e) {
+            return Result.failure(Failure.userFriendly(errors: [e.toString()]));
           }
         },
       },

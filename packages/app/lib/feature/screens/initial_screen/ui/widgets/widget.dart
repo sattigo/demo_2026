@@ -14,9 +14,9 @@ class InitialScreenWidget extends StatelessWidget {
     }
   }
 
-  Future<void> _onCallAction(BuildContext context) async {
+  Future<void> _onFetchRecipes(BuildContext context) async {
     if (context.mounted) {
-      BlocProvider.of<InitialScreenBloc>(context).add(InitialScreenEvent.someEvent());
+      BlocProvider.of<InitialScreenBloc>(context).add(InitialScreenEvent.fetchRecipes());
     }
   }
 
@@ -27,25 +27,32 @@ class InitialScreenWidget extends StatelessWidget {
       body: BlocBuilder<InitialScreenBloc, InitialScreenState>(
         bloc: BlocProvider.of<InitialScreenBloc>(context),
         builder: (blocContext, state) {
-          return SizedBox(
-            width: double.maxFinite,
-            height: double.maxFinite,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                MaterialButton(
-                  child: Text(S.of(context).initialScreen_clickable_original_toForkScreenButton),
-                  onPressed: () => _onButtonPressed(context),
-                ),
-                const SizedBox(height: 8),
-                MaterialButton(
-                  child: const Text('Call initial screen action'),
-                  onPressed: () => _onCallAction(context),
-                ),
-              ],
-            ),
-          );
+          if (state.isLoading) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (state.failure != null) {
+            return Center(
+              child: MaterialButton(child: const Text('Try again'), onPressed: () => _onFetchRecipes(context)),
+            );
+          } else {
+            final recipesList = state.recipesList;
+            return SizedBox(
+              width: double.maxFinite,
+              height: double.maxFinite,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MaterialButton(
+                    child: Text(S.of(context).initialScreen_clickable_original_toForkScreenButton),
+                    onPressed: () => _onButtonPressed(context),
+                  ),
+                  const SizedBox(height: 8),
+                  MaterialButton(child: const Text('On fetch recipes'), onPressed: () => _onFetchRecipes(context)),
+                  if (recipesList != null && recipesList.isNotEmpty) Text('${recipesList.length}'),
+                ],
+              ),
+            );
+          }
         },
       ),
     );

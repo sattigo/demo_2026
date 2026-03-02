@@ -15,7 +15,7 @@ class RecipeTransformer extends ChainTransformer<List<RecipeApi>, List<Recipe>> 
     }
 
     return Recipe(
-      id: id,
+      id: id.toString(),
       name: inParam.name,
       ingredients: inParam.ingredients,
       instructions: inParam.instructions,

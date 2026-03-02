@@ -8,6 +8,7 @@ import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/remot
 import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/remote/impl.dart';
 import 'package:demo_2026/feature/screens/initial_screen/data/repositories/impl.dart';
 import 'package:demo_2026/feature/screens/initial_screen/domain/repositories/repository_contract.dart';
+import 'package:demo_2026/feature/screens/initial_screen/domain/use_cases/fetch_recipes_use_case.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
@@ -68,6 +69,10 @@ class DependencyInjector {
         localDataSource: _getIt<InitialScreenLocalDataSource>(),
         remoteDataSource: _getIt<InitialScreenRemoteDataSource>(),
       ),
+    );
+
+    _getIt.registerSingleton<FetchRecipesUseCase>(
+      FetchRecipesUseCase(repository: _getIt<InitialScreenRepository>()),
     );
   }
 

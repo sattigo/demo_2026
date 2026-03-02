@@ -7,7 +7,7 @@ part 'recipe_api.build.g.dart';
 @freezed
 sealed class RecipeApi with _$RecipeApi {
   factory RecipeApi({
-    String? id,
+    int? id,
     String? name,
     List<String>? ingredients,
     List<String>? instructions,
