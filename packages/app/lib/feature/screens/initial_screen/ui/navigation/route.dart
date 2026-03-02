@@ -1,5 +1,7 @@
+import 'package:demo_2026/feature/app/app.dart';
 import 'package:demo_2026/feature/navigation/router/app_route.dart';
 import 'package:demo_2026/feature/navigation/ui/page/base_page.dart';
+import 'package:demo_2026/feature/screens/initial_screen/domain/use_cases/fetch_recipes_use_case.dart';
 import 'package:demo_2026/feature/screens/initial_screen/ui/navigation/page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -10,6 +12,8 @@ class InitialScreenRoute extends AppGoRoute<void> {
 
   @override
   BasePage buildPage(BuildContext context, GoRouterState state) {
-    return const InitialScreenPage();
+    return InitialScreenPage(
+      fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>(),
+    );
   }
 }
