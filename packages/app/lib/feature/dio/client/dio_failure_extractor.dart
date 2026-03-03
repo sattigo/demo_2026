@@ -1,4 +1,4 @@
-import 'package:demo_2026/feature/failure/failure.build.dart';
+import 'package:core_failure/core_failure.dart';
 import 'package:dio/dio.dart';
 
 abstract class FailureExtractorContract {

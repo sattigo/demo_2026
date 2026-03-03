@@ -1,5 +1,5 @@
+import 'package:core_failure/core_failure.dart';
 import 'package:demo_2026/feature/base_bloc/base_bloc.dart';
-import 'package:demo_2026/feature/failure/failure.build.dart';
 import 'package:demo_2026/feature/result/result.build.dart';
 import 'package:demo_2026/feature/screens/initial_screen/domain/models/recipe.build.dart';
 import 'package:demo_2026/feature/screens/initial_screen/domain/use_cases/fetch_recipes_use_case.dart';
@@ -7,12 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'action.dart';
-
-part 'event.dart';
-
-part 'state.dart';
-
 part 'bloc.build.freezed.dart';
+part 'event.dart';
+part 'state.dart';
 
 class InitialScreenBloc extends BaseBloc<InitialScreenEvent, InitialScreenState, InitialScreenAction> {
   InitialScreenBloc({required FetchRecipesUseCase fetchRecipesUseCase})

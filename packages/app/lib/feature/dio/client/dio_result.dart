@@ -1,8 +1,8 @@
+import 'package:core_failure/core_failure.dart';
 import 'package:demo_2026/feature/dio/client/default_dio_failure_exception.dart';
 import 'package:demo_2026/feature/dio/client/dio_failure.build.dart';
 import 'package:demo_2026/feature/dio/client/dio_result_failure_handler.dart';
 import 'package:demo_2026/feature/dio/client/dio_result_response_handler.dart';
-import 'package:demo_2026/feature/failure/failure.build.dart';
 import 'package:demo_2026/feature/result/result.build.dart';
 import 'package:dio/dio.dart';
 

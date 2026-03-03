@@ -1,4 +1,4 @@
-import 'package:demo_2026/feature/failure/failure.build.dart';
+import 'package:core_failure/core_failure.dart';
 import 'package:demo_2026/feature/result/result.build.dart';
 import 'package:demo_2026/feature/screens/initial_screen/domain/models/recipe.build.dart';
 import 'package:demo_2026/feature/screens/initial_screen/domain/repositories/repository_contract.dart';

@@ -1,7 +1,7 @@
+import 'package:core_failure/core_failure.dart';
 import 'package:demo_2026/feature/chain/chainable.dart';
 import 'package:demo_2026/feature/dio/client/dio_client.dart';
 import 'package:demo_2026/feature/dio/client/dio_result.dart';
-import 'package:demo_2026/feature/failure/failure.build.dart';
 import 'package:demo_2026/feature/result/result.build.dart';
 import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/remote/contract.dart';
 import 'package:demo_2026/feature/screens/initial_screen/data/dto/transformers/recipe_api_transformer.dart';

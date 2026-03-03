@@ -1,4 +1,4 @@
-import 'package:demo_2026/feature/failure/custom_failure.dart';
+import 'package:core_failure/src/custom_failure.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'failure.build.freezed.dart';

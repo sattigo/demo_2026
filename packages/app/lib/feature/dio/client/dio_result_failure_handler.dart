@@ -1,5 +1,5 @@
+import 'package:core_failure/core_failure.dart';
 import 'package:demo_2026/feature/dio/client/dio_failure.build.dart';
-import 'package:demo_2026/feature/failure/failure.build.dart';
 
 abstract class DioFailureHandlerContract {
   Failure call(DioFailure dioFailure);
