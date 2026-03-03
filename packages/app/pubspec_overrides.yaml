@@ -1,9 +1,11 @@
-# melos_managed_dependency_overrides: core_bloc,core_chain,core_failure,core_platform,core_result
+# melos_managed_dependency_overrides: core_bloc,core_chain,core_dio,core_failure,core_platform,core_result
 dependency_overrides:
   core_bloc:
     path: ../core_bloc
   core_chain:
     path: ../core_chain
+  core_dio:
+    path: ../core_dio
   core_failure:
     path: ../core_failure
   core_platform:

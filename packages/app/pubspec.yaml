@@ -9,6 +9,8 @@ dependencies:
     path: "../core_bloc"
   core_chain:
     path: "../core_chain"
+  core_dio:
+    path: "../core_dio"
   core_failure:
     path: "../core_failure"
   core_platform:

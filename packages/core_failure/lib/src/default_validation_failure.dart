@@ -1,4 +1,4 @@
-import 'package:core_failure/src/custom_failure.dart';
+import 'package:core_failure/core_failure.dart';
 
 /// This class used for validation error type
 class DefaultValidationFailure extends CustomFailure {

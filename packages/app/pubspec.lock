@@ -191,6 +191,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  core_dio:
+    dependency: "direct main"
+    description:
+      path: "../core_dio"
+      relative: true
+    source: path
+    version: "1.0.0"
   core_failure:
     dependency: "direct main"
     description:

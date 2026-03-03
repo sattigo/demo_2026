@@ -1,9 +1,9 @@
+import 'package:core_dio/src/client/dio_failure.build.dart';
+import 'package:core_dio/src/client/dio_result.dart';
+import 'package:core_dio/src/client/dio_result_failure_handler.dart';
+import 'package:core_dio/src/client/dio_result_response_handler.dart';
+import 'package:core_dio/src/dio_client_request_data.build.dart';
 import 'package:core_result/core_result.dart';
-import 'package:demo_2026/feature/dio/client/dio_failure.build.dart';
-import 'package:demo_2026/feature/dio/client/dio_result.dart';
-import 'package:demo_2026/feature/dio/client/dio_result_failure_handler.dart';
-import 'package:demo_2026/feature/dio/client/dio_result_response_handler.dart';
-import 'package:demo_2026/feature/dio/dio_client_request_data.build.dart';
 import 'package:dio/dio.dart';
 
 class DioClient {

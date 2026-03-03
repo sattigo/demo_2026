@@ -1,7 +1,5 @@
+import 'package:core_dio/core_dio.dart';
 import 'package:core_platform/core_platform.dart';
-import 'package:demo_2026/feature/dio/client/dio_client.dart';
-import 'package:demo_2026/feature/dio/client/dio_result_failure_handler.dart';
-import 'package:demo_2026/feature/dio/client/dio_result_response_handler.dart';
 import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/local/contract.dart';
 import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/local/impl.dart';
 import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/remote/contract.dart';
