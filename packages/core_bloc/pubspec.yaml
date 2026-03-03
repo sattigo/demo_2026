@@ -1,0 +1,12 @@
+name: "core_bloc"
+
+version: "1.0.0"
+
+dependencies:
+  # Версии должны быть указаны точно, без диапазонов
+  bloc: "9.0.0"
+
+environment:
+  sdk: "3.8.1"
+
+publish_to: "none"

@@ -1,4 +1,4 @@
-import 'package:demo_2026/feature/platform/platform_type.dart';
+import 'package:core_platform/src/platform_type.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PlatformTypeRepository {

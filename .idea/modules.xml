@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/packages/core_bloc/melos_core_bloc.iml" filepath="$PROJECT_DIR$/packages/core_bloc/melos_core_bloc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/core_chain/melos_core_chain.iml" filepath="$PROJECT_DIR$/packages/core_chain/melos_core_chain.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/core_failure/melos_core_failure.iml" filepath="$PROJECT_DIR$/packages/core_failure/melos_core_failure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/core_platform/melos_core_platform.iml" filepath="$PROJECT_DIR$/packages/core_platform/melos_core_platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/core_result/melos_core_result.iml" filepath="$PROJECT_DIR$/packages/core_result/melos_core_result.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/app/melos_demo_2026.iml" filepath="$PROJECT_DIR$/packages/app/melos_demo_2026.iml" />
       <module fileurl="file://$PROJECT_DIR$/melos_demo_2026_workspace.iml" filepath="$PROJECT_DIR$/melos_demo_2026_workspace.iml" />
       <module fileurl="file://$PROJECT_DIR$/melos_demo_2026.iml" filepath="$PROJECT_DIR$/melos_demo_2026.iml" />

@@ -1,0 +1,8 @@
+name: "core_chain"
+
+version: "1.0.0"
+
+environment:
+  sdk: "3.8.1"
+
+publish_to: "none"

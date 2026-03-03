@@ -1,6 +1,6 @@
-import 'package:demo_2026/feature/platform/platform_type.dart';
-import 'package:demo_2026/feature/platform/platform_type_error.dart';
-import 'package:demo_2026/feature/platform/platform_type_repository.dart';
+import 'package:core_platform/src/platform_type.dart';
+import 'package:core_platform/src/platform_type_error.dart';
+import 'package:core_platform/src/platform_type_repository.dart';
 
 class PlatformTypeService {
   factory PlatformTypeService() => _instance;

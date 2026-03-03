@@ -1,0 +1,12 @@
+name: "core_platform"
+
+version: "1.0.0"
+
+dependencies:
+  # Версии должны быть указаны точно, без диапазонов
+  shared_preferences: "2.5.3"
+
+environment:
+  sdk: "3.8.1"
+
+publish_to: "none"

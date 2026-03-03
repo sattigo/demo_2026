@@ -1,6 +1,6 @@
+import 'package:core_bloc/core_bloc.dart';
 import 'package:core_failure/core_failure.dart';
-import 'package:demo_2026/feature/base_bloc/base_bloc.dart';
-import 'package:demo_2026/feature/result/result.build.dart';
+import 'package:core_result/core_result.dart';
 import 'package:demo_2026/feature/screens/initial_screen/domain/models/recipe.build.dart';
 import 'package:demo_2026/feature/screens/initial_screen/domain/use_cases/fetch_recipes_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

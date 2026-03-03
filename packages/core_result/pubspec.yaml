@@ -1,0 +1,17 @@
+name: "core_result"
+
+version: "1.0.0"
+
+dependencies:
+  # Версии должны быть указаны точно, без диапазонов
+  freezed_annotation: "3.0.0"
+
+dev_dependencies:
+  # Версии должны быть указаны точно, без диапазонов
+  build_runner: "2.4.15"
+  freezed: "3.0.6"
+
+environment:
+  sdk: "3.8.1"
+
+publish_to: "none"

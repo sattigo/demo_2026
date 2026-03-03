@@ -1,4 +1,4 @@
-import 'package:demo_2026/feature/chain/chain_validator.dart';
+import 'package:core_chain/core_chain.dart';
 import 'package:demo_2026/feature/screens/initial_screen/data/dto/models/recipe_api.build.dart';
 import 'package:demo_2026/feature/screens/initial_screen/data/dto/validators/recipe_api_validator_exception.dart';
 

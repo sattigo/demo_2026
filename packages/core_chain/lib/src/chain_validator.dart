@@ -1,4 +1,4 @@
-import 'package:demo_2026/feature/chain/chain_transformer.dart';
+import 'package:core_chain/src/chain_transformer.dart';
 
 abstract class ChainValidator<T> extends ChainTransformer<T, T> {
   @override

@@ -5,8 +5,16 @@ version: "1.0.0+1"
 dependencies:
   # Версии должны быть указаны точно, без диапазонов
   bloc: "9.0.0"
+  core_bloc:
+    path: "../core_bloc"
+  core_chain:
+    path: "../core_chain"
   core_failure:
     path: "../core_failure"
+  core_platform:
+    path: "../core_platform"
+  core_result:
+    path: "../core_result"
   cupertino_icons: "1.0.8"
   dio: "5.8.0+1"
   flutter:

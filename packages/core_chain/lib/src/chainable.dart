@@ -1,6 +1,6 @@
-import 'package:demo_2026/feature/chain/chain_transformer.dart';
-import 'package:demo_2026/feature/chain/chain_validator.dart';
-import 'package:demo_2026/feature/chain/linkable_mixin.dart';
+import 'package:core_chain/src/chain_transformer.dart';
+import 'package:core_chain/src/chain_validator.dart';
+import 'package:core_chain/src/linkable_mixin.dart';
 
 class Chainable<T> with Linkable<Chainable<dynamic>> {
   Chainable._fromValue(this._value);

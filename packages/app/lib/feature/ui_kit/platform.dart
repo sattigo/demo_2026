@@ -1,4 +1,4 @@
-import 'package:demo_2026/feature/platform/platform_type_service.dart';
+import 'package:core_platform/core_platform.dart';
 import 'package:flutter/widgets.dart';
 
 class Platform extends StatelessWidget {
