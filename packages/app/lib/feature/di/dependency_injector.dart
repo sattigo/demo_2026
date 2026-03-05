@@ -1,7 +1,7 @@
 import 'package:core_dio/core_dio.dart';
 import 'package:core_platform/core_platform.dart';
-import 'package:feature_initial_screen/feature_initial_screen.dart';
 import 'package:dio/dio.dart';
+import 'package:feature_initial_screen/feature_initial_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 

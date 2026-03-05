@@ -22,9 +22,6 @@ class InitialScreenRoute extends AppGoRoute<void> {
 
   @override
   BasePage buildPage(BuildContext context, GoRouterState state) {
-    return InitialScreenPage(
-      fetchRecipesUseCase: _fetchRecipesUseCase,
-      onGoToForkScreen: _onGoToForkScreen,
-    );
+    return InitialScreenPage(fetchRecipesUseCase: _fetchRecipesUseCase, onGoToForkScreen: _onGoToForkScreen);
   }
 }

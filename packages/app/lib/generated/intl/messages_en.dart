@@ -23,13 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "aboutApp": MessageLookupByLibrary.simpleMessage("About application"),
-    "forkScreen_notClickable_original_appBarText":
-        MessageLookupByLibrary.simpleMessage("Fork screen widget"),
-    "forkScreen_notClickable_original_centerText":
-        MessageLookupByLibrary.simpleMessage("Centered text"),
-    "initialScreen_clickable_original_toForkScreenButton":
-        MessageLookupByLibrary.simpleMessage("To \"fork page\""),
-    "initialScreen_notClickable_original_appBarText":
-        MessageLookupByLibrary.simpleMessage("Initial screen widget"),
+    "forkScreen_notClickable_original_appBarText": MessageLookupByLibrary.simpleMessage("Fork screen widget"),
+    "forkScreen_notClickable_original_centerText": MessageLookupByLibrary.simpleMessage("Centered text"),
+    "initialScreen_clickable_original_toForkScreenButton": MessageLookupByLibrary.simpleMessage("To \"fork page\""),
+    "initialScreen_notClickable_original_appBarText": MessageLookupByLibrary.simpleMessage("Initial screen widget"),
   };
 }

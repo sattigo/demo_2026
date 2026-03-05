@@ -42,10 +42,7 @@ class InitialScreenWidget extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MaterialButton(
-                    child: const Text('To Fork Screen'),
-                    onPressed: () => _onButtonPressed(context),
-                  ),
+                  MaterialButton(child: const Text('To Fork Screen'), onPressed: () => _onButtonPressed(context)),
                   const SizedBox(height: 8),
                   MaterialButton(child: const Text('On fetch recipes'), onPressed: () => _onFetchRecipes(context)),
                   if (recipesList != null && recipesList.isNotEmpty) Text('${recipesList.length}'),

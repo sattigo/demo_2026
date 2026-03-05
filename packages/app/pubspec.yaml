@@ -9,13 +9,13 @@ dependencies:
   bloc: "9.2.0"
   core_bloc: any
   core_chain: any
-  feature_initial_screen: any
   core_dio: any
   core_failure: any
   core_platform: any
   core_result: any
   cupertino_icons: "1.0.8"
   dio: "5.9.2"
+  feature_initial_screen: any
   flutter:
     sdk: "flutter"
   flutter_bloc: "9.1.1"
