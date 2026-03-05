@@ -2,11 +2,13 @@ name: "core_platform"
 
 version: "1.0.0"
 
+resolution: workspace
+
 dependencies:
   # Версии должны быть указаны точно, без диапазонов
-  shared_preferences: "2.5.3"
+  shared_preferences: "2.5.4"
 
 environment:
-  sdk: "3.8.1"
+  sdk: "3.11.1"
 
 publish_to: "none"

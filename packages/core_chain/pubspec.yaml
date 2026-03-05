@@ -2,7 +2,9 @@ name: "core_chain"
 
 version: "1.0.0"
 
+resolution: workspace
+
 environment:
-  sdk: "3.8.1"
+  sdk: "3.11.1"
 
 publish_to: "none"

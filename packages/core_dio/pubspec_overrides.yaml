@@ -1,6 +1,0 @@
-# melos_managed_dependency_overrides: core_failure,core_result
-dependency_overrides:
-  core_failure:
-    path: ../core_failure
-  core_result:
-    path: ../core_result

@@ -2,11 +2,13 @@ name: "core_bloc"
 
 version: "1.0.0"
 
+resolution: workspace
+
 dependencies:
   # Версии должны быть указаны точно, без диапазонов
-  bloc: "9.0.0"
+  bloc: "9.2.0"
 
 environment:
-  sdk: "3.8.1"
+  sdk: "3.11.1"
 
 publish_to: "none"

@@ -2,16 +2,18 @@ name: "core_result"
 
 version: "1.0.0"
 
+resolution: workspace
+
 dependencies:
   # Версии должны быть указаны точно, без диапазонов
-  freezed_annotation: "3.0.0"
+  freezed_annotation: "3.1.0"
 
 dev_dependencies:
   # Версии должны быть указаны точно, без диапазонов
-  build_runner: "2.4.15"
-  freezed: "3.0.6"
+  build_runner: "2.12.2"
+  freezed: "3.2.5"
 
 environment:
-  sdk: "3.8.1"
+  sdk: "3.11.1"
 
 publish_to: "none"

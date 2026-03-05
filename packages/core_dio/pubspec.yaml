@@ -2,21 +2,21 @@ name: "core_dio"
 
 version: "1.0.0"
 
+resolution: workspace
+
 dependencies:
   # Версии должны быть указаны точно, без диапазонов
-  core_failure:
-    path: "../core_failure"
-  core_result:
-    path: "../core_result"
-  dio: "5.8.0+1"
-  freezed_annotation: "3.0.0"
+  core_failure: any
+  core_result: any
+  dio: "5.9.2"
+  freezed_annotation: "3.1.0"
 
 dev_dependencies:
   # Версии должны быть указаны точно, без диапазонов
-  build_runner: "2.4.15"
-  freezed: "3.0.6"
+  build_runner: "2.12.2"
+  freezed: "3.2.5"
 
 environment:
-  sdk: "3.8.1"
+  sdk: "3.11.1"
 
 publish_to: "none"

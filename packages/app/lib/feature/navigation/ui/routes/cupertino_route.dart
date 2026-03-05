@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 import 'dart:ui';
 
@@ -298,11 +299,11 @@ class _CupertinoBackGestureController<T> {
         )!.floor(),
         _kMaxPageBackAnimationTime,
       );
-      controller.animateTo(
+      unawaited(controller.animateTo(
         1,
         duration: Duration(milliseconds: droppedPageForwardAnimationTime),
         curve: animationCurve,
-      );
+      ));
     } else {
       // This route is destined to pop at this point. Reuse navigator's pop.
       navigator.pop();
@@ -315,11 +316,11 @@ class _CupertinoBackGestureController<T> {
           _kMaxDroppedSwipePageForwardAnimationTime,
           controller.value,
         )!.floor();
-        controller.animateBack(
+        unawaited(controller.animateBack(
           0,
           duration: Duration(milliseconds: droppedPageBackAnimationTime),
           curve: animationCurve,
-        );
+        ));
       }
     }
 

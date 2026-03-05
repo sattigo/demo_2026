@@ -2,9 +2,42 @@ name: "demo_2026_workspace"
 publish_to: "none"
 
 environment:
-  sdk: "3.8.1"
+  sdk: "3.11.1"
+
+workspace:
+  - packages/app
+  - packages/core_bloc
+  - packages/core_chain
+  - packages/core_dio
+  - packages/core_failure
+  - packages/core_platform
+  - packages/core_result
 
 dev_dependencies:
   ignorium: ">=0.3.2"
   lintorium: "308.0.0"
-  melos: "6.3.3"
+  melos: "7.4.0"
+
+melos:
+  command:
+    bootstrap:
+      usePubspecOverrides: true
+
+  scripts:
+    analyze:
+      run: melos exec -- dart analyze .
+      description: Analyze all packages
+
+    format:
+      run: melos exec -- dart format .
+      description: Format all packages
+
+    test:
+      run: melos exec -- flutter test
+      description: Run tests in all packages
+
+    gen:
+      run: melos exec --concurrency 4 -- dart run build_runner build --delete-conflicting-outputs
+      description: Run code generation in all packages
+      packageFilters:
+        dependsOn: build_runner
