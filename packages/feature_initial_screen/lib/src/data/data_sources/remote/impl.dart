@@ -2,11 +2,11 @@ import 'package:core_chain/core_chain.dart';
 import 'package:core_dio/core_dio.dart';
 import 'package:core_failure/core_failure.dart';
 import 'package:core_result/core_result.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/remote/contract.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/dto/transformers/recipe_api_transformer.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/dto/transformers/recipe_transformer.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/dto/validators/recipe_api_validator.dart';
-import 'package:demo_2026/feature/screens/initial_screen/domain/models/recipe.build.dart';
+import 'package:feature_initial_screen/src/data/data_sources/remote/contract.dart';
+import 'package:feature_initial_screen/src/data/dto/transformers/recipe_api_transformer.dart';
+import 'package:feature_initial_screen/src/data/dto/transformers/recipe_transformer.dart';
+import 'package:feature_initial_screen/src/data/dto/validators/recipe_api_validator.dart';
+import 'package:feature_initial_screen/src/domain/models/recipe.build.dart';
 
 class InitialScreenRemoteDataSourceImpl implements InitialScreenRemoteDataSource {
   InitialScreenRemoteDataSourceImpl({required DioClient dioClient}) : _dioClient = dioClient;

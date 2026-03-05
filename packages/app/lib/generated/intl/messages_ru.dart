@@ -23,9 +23,13 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "aboutApp": MessageLookupByLibrary.simpleMessage("О приложении"),
-    "forkScreen_notClickable_original_appBarText": MessageLookupByLibrary.simpleMessage("Экран вилки"),
-    "forkScreen_notClickable_original_centerText": MessageLookupByLibrary.simpleMessage("Центральный текст"),
-    "initialScreen_clickable_original_toForkScreenButton": MessageLookupByLibrary.simpleMessage("На \"fork page\""),
-    "initialScreen_notClickable_original_appBarText": MessageLookupByLibrary.simpleMessage("Инициализационный экран"),
+    "forkScreen_notClickable_original_appBarText":
+        MessageLookupByLibrary.simpleMessage("Экран вилки"),
+    "forkScreen_notClickable_original_centerText":
+        MessageLookupByLibrary.simpleMessage("Центральный текст"),
+    "initialScreen_clickable_original_toForkScreenButton":
+        MessageLookupByLibrary.simpleMessage("На \"fork page\""),
+    "initialScreen_notClickable_original_appBarText":
+        MessageLookupByLibrary.simpleMessage("Инициализационный экран"),
   };
 }

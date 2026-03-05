@@ -1,6 +1,6 @@
 import 'package:core_chain/core_chain.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/dto/models/recipe_api.build.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/dto/validators/recipe_api_validator_exception.dart';
+import 'package:feature_initial_screen/src/data/dto/models/recipe_api.build.dart';
+import 'package:feature_initial_screen/src/data/dto/validators/recipe_api_validator_exception.dart';
 
 class RecipeApiValidator extends ChainValidator<List<RecipeApi>> {
   @override

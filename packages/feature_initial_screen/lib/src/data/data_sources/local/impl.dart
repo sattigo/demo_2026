@@ -1,5 +1,5 @@
-import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/local/contract.dart';
-import 'package:demo_2026/feature/screens/initial_screen/domain/models/recipe.build.dart';
+import 'package:feature_initial_screen/src/data/data_sources/local/contract.dart';
+import 'package:feature_initial_screen/src/domain/models/recipe.build.dart';
 
 class InitialScreenLocalDataSourceImpl implements InitialScreenLocalDataSource {
   List<Recipe>? _cachedRecipes;

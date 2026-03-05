@@ -1,7 +1,7 @@
 import 'dart:collection';
 
 import 'package:core_chain/core_chain.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/dto/models/recipe_api.build.dart';
+import 'package:feature_initial_screen/src/data/dto/models/recipe_api.build.dart';
 
 class RecipeApiTransformer extends ChainTransformer<LinkedHashMap<String, dynamic>, List<RecipeApi>> {
   @override

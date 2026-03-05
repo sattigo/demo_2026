@@ -1,12 +1,6 @@
 import 'package:core_dio/core_dio.dart';
 import 'package:core_platform/core_platform.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/local/contract.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/local/impl.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/remote/contract.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/data_sources/remote/impl.dart';
-import 'package:demo_2026/feature/screens/initial_screen/data/repositories/impl.dart';
-import 'package:demo_2026/feature/screens/initial_screen/domain/repositories/repository_contract.dart';
-import 'package:demo_2026/feature/screens/initial_screen/domain/use_cases/fetch_recipes_use_case.dart';
+import 'package:feature_initial_screen/feature_initial_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';

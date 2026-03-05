@@ -1,4 +1,4 @@
-import 'package:demo_2026/feature/screens/initial_screen/domain/models/recipe.build.dart';
+import 'package:feature_initial_screen/src/domain/models/recipe.build.dart';
 
 abstract interface class InitialScreenLocalDataSource {
   List<Recipe>? getCachedRecipes();
