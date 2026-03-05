@@ -23,6 +23,8 @@ class DependencyInjector {
 
   final GetIt _getIt = GetIt.instance;
 
+  /// split into _initBase() + _initAuth(token) using pushNewScope/popScope.
+  /// Call _initAuth on login, popScope on logout — see AppBloc/AuthBloc as the entry point.
   Future<void> _init() async {
     _getIt.registerSingletonAsync<PlatformTypeService>(PlatformTypeService.getInstance);
 
