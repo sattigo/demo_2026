@@ -69,9 +69,7 @@ class DependencyInjector {
       ),
     );
 
-    _getIt.registerSingleton<FetchRecipesUseCase>(
-      FetchRecipesUseCase(repository: _getIt<InitialScreenRepository>()),
-    );
+    _getIt.registerSingleton<FetchRecipesUseCase>(FetchRecipesUseCase(repository: _getIt<InitialScreenRepository>()));
   }
 
   static Future<DependencyInjector> create() async {

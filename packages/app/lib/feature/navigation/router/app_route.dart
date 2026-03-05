@@ -71,12 +71,7 @@ abstract class AppGoRoute<T> extends AppRoute<GoRoute> {
 
   @override
   GoRoute buildRoute({List<RouteBase> routes = const []}) {
-    return GoRoute(
-      path: path,
-      name: name,
-      pageBuilder: buildPage,
-      routes: routes,
-    );
+    return GoRoute(path: path, name: name, pageBuilder: buildPage, routes: routes);
   }
 
   /// Имя маршрута для именованной навигации. По умолчанию — имя класса.

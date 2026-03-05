@@ -22,9 +22,8 @@ class InitialScreenRepositoryImpl implements InitialScreenRepository {
     final cacheTime = _localDataSource.getCacheTime();
     final cachedRecipes = _localDataSource.getCachedRecipes();
 
-    final isCacheValid = cacheTime != null &&
-        cachedRecipes != null &&
-        DateTime.now().difference(cacheTime) < _cacheDuration;
+    final isCacheValid =
+        cacheTime != null && cachedRecipes != null && DateTime.now().difference(cacheTime) < _cacheDuration;
 
     if (isCacheValid) {
       return Result.success(cachedRecipes);

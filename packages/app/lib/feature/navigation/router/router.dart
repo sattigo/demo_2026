@@ -34,10 +34,7 @@ abstract class AppRouter extends GoRouter {
          ),
        );
 
-  static FutureOr<String?> _defaultRedirect(
-    BuildContext context,
-    GoRouterState state,
-  ) {
+  static FutureOr<String?> _defaultRedirect(BuildContext context, GoRouterState state) {
     if (state.uri.path.contains('slRL') || state.uri.path.contains('gotu')) {
       return '/';
     }
@@ -45,9 +42,7 @@ abstract class AppRouter extends GoRouter {
   }
 
   static List<RouteBase> _createRoutes(List<AppRoute> routes) {
-    return routes
-        .map((e) => e.buildRoute(routes: _createRoutes(e.routes)))
-        .toList();
+    return routes.map((e) => e.buildRoute(routes: _createRoutes(e.routes))).toList();
   }
 }
 

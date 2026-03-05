@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class InitialScreenView extends StatelessWidget {
   const InitialScreenView({required FetchRecipesUseCase fetchRecipesUseCase, super.key})
-      : _fetchRecipesUseCase = fetchRecipesUseCase;
+    : _fetchRecipesUseCase = fetchRecipesUseCase;
 
   final FetchRecipesUseCase _fetchRecipesUseCase;
 

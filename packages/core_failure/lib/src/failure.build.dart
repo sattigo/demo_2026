@@ -16,11 +16,8 @@ sealed class Failure with _$Failure {
   const factory Failure.general() = FailureGeneral;
 
   /// [title] and [errors] usually displays in AlertDialogs. [meta] - additional data field
-  const factory Failure.userFriendly({
-    String? title,
-    @Default([]) List<String> errors,
-    Map<String, dynamic>? meta,
-  }) = FailureUserFriendly;
+  const factory Failure.userFriendly({String? title, @Default([]) List<String> errors, Map<String, dynamic>? meta}) =
+      FailureUserFriendly;
 
   const factory Failure.custom({required CustomFailure custom}) = FailureCustom;
 }

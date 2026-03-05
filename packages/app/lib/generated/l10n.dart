@@ -28,9 +28,7 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -81,22 +79,12 @@ class S {
 
   /// `Экран вилки`
   String get forkScreen_notClickable_original_appBarText {
-    return Intl.message(
-      'Экран вилки',
-      name: 'forkScreen_notClickable_original_appBarText',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Экран вилки', name: 'forkScreen_notClickable_original_appBarText', desc: '', args: []);
   }
 
   /// `Центральный текст`
   String get forkScreen_notClickable_original_centerText {
-    return Intl.message(
-      'Центральный текст',
-      name: 'forkScreen_notClickable_original_centerText',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Центральный текст', name: 'forkScreen_notClickable_original_centerText', desc: '', args: []);
   }
 }
 
@@ -104,10 +92,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[
-      Locale.fromSubtags(languageCode: 'ru'),
-      Locale.fromSubtags(languageCode: 'en'),
-    ];
+    return const <Locale>[Locale.fromSubtags(languageCode: 'ru'), Locale.fromSubtags(languageCode: 'en')];
   }
 
   @override

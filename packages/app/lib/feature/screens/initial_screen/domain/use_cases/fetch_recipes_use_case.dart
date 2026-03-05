@@ -4,8 +4,7 @@ import 'package:demo_2026/feature/screens/initial_screen/domain/models/recipe.bu
 import 'package:demo_2026/feature/screens/initial_screen/domain/repositories/repository_contract.dart';
 
 class FetchRecipesUseCase {
-  FetchRecipesUseCase({required InitialScreenRepository repository})
-      : _repository = repository;
+  FetchRecipesUseCase({required InitialScreenRepository repository}) : _repository = repository;
 
   final InitialScreenRepository _repository;
 

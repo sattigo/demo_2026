@@ -12,8 +12,6 @@ class InitialScreenRoute extends AppGoRoute<void> {
 
   @override
   BasePage buildPage(BuildContext context, GoRouterState state) {
-    return InitialScreenPage(
-      fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>(),
-    );
+    return InitialScreenPage(fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>());
   }
 }

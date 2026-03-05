@@ -26,12 +26,7 @@ class BasePage extends Page<dynamic> {
       return _buildTransparentPageRoute();
     }
     if (transition != null) {
-      return BaseMaterialPageRoute(
-        builder: (_) => widget,
-        settings: this,
-        duration: duration,
-        transition: transition!,
-      );
+      return BaseMaterialPageRoute(builder: (_) => widget, settings: this, duration: duration, transition: transition!);
     }
     return MaterialPageRoute(builder: (_) => widget, settings: this);
   }
@@ -56,13 +51,7 @@ class BasePage extends Page<dynamic> {
       opaque: false,
       settings: this,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        return transition?.animate(
-              context,
-              animation,
-              secondaryAnimation,
-              child,
-            ) ??
-            child;
+        return transition?.animate(context, animation, secondaryAnimation, child) ?? child;
       },
       pageBuilder: (_, _, _) => widget,
     );

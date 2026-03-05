@@ -7,12 +7,8 @@ class ForkScreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(S.of(context).forkScreen_notClickable_original_appBarText),
-      ),
-      body: Center(
-        child: Text(S.of(context).forkScreen_notClickable_original_centerText),
-      ),
+      appBar: AppBar(title: Text(S.of(context).forkScreen_notClickable_original_appBarText)),
+      body: Center(child: Text(S.of(context).forkScreen_notClickable_original_centerText)),
     );
   }
 }
