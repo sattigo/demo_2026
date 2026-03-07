@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:core_assets/core_assets.dart';
 import 'package:feature_splash_screen/src/ui/bloc/bloc.build.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -66,7 +67,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> with SingleTick
           child: AnimatedBuilder(
             animation: _controller,
             builder: (context, child) => Opacity(opacity: _controller.value, child: child),
-            child: const Icon(Icons.restaurant, size: 120),
+            child: Assets.images.appImage.pkg(width: 120),
           ),
         ),
       ),
