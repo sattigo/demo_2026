@@ -14,10 +14,7 @@ class LandingScreenView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => LandingScreenBloc(),
-      child: LandingScreenCoordinator(
-        onNavigateToAuth: _onNavigateToAuth,
-        child: const LandingScreenWidget(),
-      ),
+      child: LandingScreenCoordinator(onNavigateToAuth: _onNavigateToAuth, child: const LandingScreenWidget()),
     );
   }
 }

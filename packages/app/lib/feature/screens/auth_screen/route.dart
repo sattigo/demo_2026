@@ -1,16 +1,13 @@
-import 'package:demo_2026/feature/navigation/router/app_route.dart';
-import 'package:demo_2026/feature/navigation/ui/page/base_page.dart';
+import 'package:core_navigation/core_navigation.dart';
 import 'package:demo_2026/feature/screens/auth_screen/page.dart';
 import 'package:feature_auth_screen/feature_auth_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class AuthScreenRoute extends AppGoRoute<void> {
-  AuthScreenRoute({
-    required LoginUseCase loginUseCase,
-    required void Function(BuildContext context) onNavigateToHome,
-  }) : _loginUseCase = loginUseCase,
-       _onNavigateToHome = onNavigateToHome;
+  AuthScreenRoute({required LoginUseCase loginUseCase, required void Function(BuildContext context) onNavigateToHome})
+    : _loginUseCase = loginUseCase,
+      _onNavigateToHome = onNavigateToHome;
 
   final LoginUseCase _loginUseCase;
   final void Function(BuildContext context) _onNavigateToHome;

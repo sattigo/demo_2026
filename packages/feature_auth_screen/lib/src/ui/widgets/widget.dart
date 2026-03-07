@@ -17,20 +17,14 @@ class AuthScreenWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    errorText: state.emailError,
-                  ),
+                  decoration: InputDecoration(labelText: 'Email', errorText: state.emailError),
                   keyboardType: TextInputType.emailAddress,
                   onChanged: (value) =>
                       BlocProvider.of<AuthScreenBloc>(context).add(AuthScreenEvent.emailChanged(value)),
                 ),
                 const SizedBox(height: 16),
                 TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    errorText: state.passwordError,
-                  ),
+                  decoration: InputDecoration(labelText: 'Password', errorText: state.passwordError),
                   obscureText: true,
                   onChanged: (value) =>
                       BlocProvider.of<AuthScreenBloc>(context).add(AuthScreenEvent.passwordChanged(value)),
@@ -49,8 +43,7 @@ class AuthScreenWidget extends StatelessWidget {
                   const CircularProgressIndicator()
                 else
                   ElevatedButton(
-                    onPressed: () =>
-                        BlocProvider.of<AuthScreenBloc>(context).add(AuthScreenEvent.loginSubmitted()),
+                    onPressed: () => BlocProvider.of<AuthScreenBloc>(context).add(AuthScreenEvent.loginSubmitted()),
                     child: const Text('Sign In'),
                   ),
               ],

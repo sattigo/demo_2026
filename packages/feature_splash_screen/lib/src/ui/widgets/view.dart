@@ -14,10 +14,7 @@ class SplashScreenView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => SplashScreenBloc(),
-      child: SplashScreenCoordinator(
-        onNavigateToLanding: _onNavigateToLanding,
-        child: const SplashScreenWidget(),
-      ),
+      child: SplashScreenCoordinator(onNavigateToLanding: _onNavigateToLanding, child: const SplashScreenWidget()),
     );
   }
 }

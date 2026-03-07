@@ -1,5 +1,4 @@
-import 'package:demo_2026/feature/navigation/router/app_route.dart';
-import 'package:demo_2026/feature/navigation/ui/page/base_page.dart';
+import 'package:core_navigation/core_navigation.dart';
 import 'package:demo_2026/feature/screens/fork_screen/page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

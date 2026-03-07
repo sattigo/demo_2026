@@ -1,4 +1,4 @@
-import 'package:demo_2026/feature/navigation/ui/transitions/base_transition_contract.dart';
+import 'package:core_navigation/src/transitions/base_transition_contract.dart';
 import 'package:flutter/widgets.dart';
 
 class FadePageTransition extends BaseTransitionContract {

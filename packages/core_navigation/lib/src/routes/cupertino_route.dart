@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:demo_2026/feature/navigation/ui/transitions/base_transition_contract.dart';
+import 'package:core_navigation/src/transitions/base_transition_contract.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -39,41 +39,28 @@ class BaseCupertinoPageRoute extends CupertinoPageRoute<dynamic> {
   }
 
   static bool _isPopGestureEnabled<T>(PageRoute<T> route) {
-    // If there's nothing to go back to, then obviously we don't support
-    // the back gesture.
     if (route.isFirst) {
       return false;
     }
-    // If the route wouldn't actually pop if we popped it, then the gesture
-    // would be really confusing (or would skip internal routes), so disallow it.
     if (route.willHandlePopInternally) {
       return false;
     }
-    // If attempts to dismiss this route might be vetoed such as in a page
-    // with forms, then do not allow the user to dismiss the route with a swipe.
     if (route.popDisposition == RoutePopDisposition.doNotPop) {
       return false;
     }
-    // Fullscreen dialogs aren't dismissible by back swipe.
     if (route.fullscreenDialog) {
       return false;
     }
-    // If we're in an animation already, we cannot be manually swiped.
     if (route.animation!.status != AnimationStatus.completed) {
       return false;
     }
-    // If we're being popped into, we also cannot be swiped until the pop above
-    // it completes. This translates to our secondary animation being
-    // dismissed.
     if (route.secondaryAnimation!.status != AnimationStatus.dismissed) {
       return false;
     }
-    // If we're in a gesture already, we cannot start another.
     if (isPopGestureInProgress(route)) {
       return false;
     }
 
-    // Looks like a back gesture would be welcome!
     return true;
   }
 
@@ -172,8 +159,6 @@ class _CupertinoBackGestureDetectorState<T> extends State<_CupertinoBackGestureD
 
   void _handleDragCancel() {
     assert(mounted, 'Должно быть mounted');
-    // This can be called even if start is not called, paired with the "down" event
-    // that we don't consider here.
     _backGestureController?.dragEnd(0);
     _backGestureController = null;
   }
@@ -196,8 +181,6 @@ class _CupertinoBackGestureDetectorState<T> extends State<_CupertinoBackGestureD
   @override
   Widget build(BuildContext context) {
     assert(debugCheckHasDirectionality(context), 'Виджет должен вызываться только в соответствующем контексте');
-    // For devices with notches, the drag area needs to be larger on the side
-    // that has the notch.
     var dragAreaWidth = Directionality.of(context) == TextDirection.ltr
         ? MediaQuery.of(context).padding.left
         : MediaQuery.of(context).padding.right;
@@ -219,9 +202,6 @@ class _CupertinoBackGestureDetectorState<T> extends State<_CupertinoBackGestureD
 }
 
 class _CupertinoBackGestureController<T> {
-  /// Creates a controller for an iOS-style back gesture.
-  ///
-  /// The [navigator] and [controller] arguments must not be null.
   _CupertinoBackGestureController({required this.navigator, required this.controller}) {
     navigator.didStartUserGesture();
   }
@@ -229,27 +209,14 @@ class _CupertinoBackGestureController<T> {
   final AnimationController controller;
   final NavigatorState navigator;
 
-  /// The drag gesture has changed by [delta]. The total range of the
-  /// drag should be 0.0 to 1.0.
   void dragUpdate(double delta) {
     controller.value -= delta;
   }
 
-  /// The drag gesture has ended with a horizontal motion of
-  /// [velocity] as a fraction of screen width per second.
   void dragEnd(double velocity) {
-    // Fling in the appropriate direction.
-    // AnimationController.fling is guaranteed to
-    // take at least one frame.
-    //
-    // This curve has been determined through rigorously eyeballing native iOS
-    // animations.
     const Curve animationCurve = Curves.fastLinearToSlowEaseIn;
     bool animateForward;
 
-    // If the user releases the page before mid screen with sufficient velocity,
-    // or after mid screen, we should animate the page out. Otherwise, the page
-    // should be animated back in.
     if (velocity.abs() >= _kMinFlingVelocity) {
       animateForward = velocity <= 0;
     } else {
@@ -257,9 +224,6 @@ class _CupertinoBackGestureController<T> {
     }
 
     if (animateForward) {
-      // The closer the panel is to dismissing, the shorter the animation is.
-      // We want to cap the animation time, but we want to use a linear curve
-      // to determine it.
       final droppedPageForwardAnimationTime = min(
         lerpDouble(_kMaxDroppedSwipePageForwardAnimationTime, 0, controller.value)!.floor(),
         _kMaxPageBackAnimationTime,
@@ -272,12 +236,9 @@ class _CupertinoBackGestureController<T> {
         ),
       );
     } else {
-      // This route is destined to pop at this point. Reuse navigator's pop.
       navigator.pop();
 
-      // The popping may have finished inline if already at the target destination.
       if (controller.isAnimating) {
-        // Otherwise, use a custom popping animation duration and curve.
         final droppedPageBackAnimationTime = lerpDouble(
           0,
           _kMaxDroppedSwipePageForwardAnimationTime,
@@ -294,9 +255,6 @@ class _CupertinoBackGestureController<T> {
     }
 
     if (controller.isAnimating) {
-      // Keep the userGestureInProgress in true state so we don't change the
-      // curve of the page transition mid-flight since CupertinoPageTransition
-      // depends on userGestureInProgress.
       late AnimationStatusListener animationStatusCallback;
       animationStatusCallback = (status) {
         navigator.didStopUserGesture();

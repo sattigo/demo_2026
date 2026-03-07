@@ -1,7 +1,7 @@
+import 'package:core_navigation/src/routes/cupertino_route.dart';
+import 'package:core_navigation/src/routes/material_route.dart';
+import 'package:core_navigation/src/transitions/base_transition_contract.dart';
 import 'package:core_platform/core_platform.dart';
-import 'package:demo_2026/feature/navigation/ui/routes/cupertino_route.dart';
-import 'package:demo_2026/feature/navigation/ui/routes/material_route.dart';
-import 'package:demo_2026/feature/navigation/ui/transitions/base_transition_contract.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

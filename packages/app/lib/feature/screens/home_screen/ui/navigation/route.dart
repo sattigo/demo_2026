@@ -1,7 +1,4 @@
-// TODO(sattigo): перенести в feature_home_screen, когда навигационные примитивы
-//  (BasePage, AppGoRoute, переходы) будут вынесены в отдельный core_navigation пакет.
-import 'package:demo_2026/feature/navigation/router/app_route.dart';
-import 'package:demo_2026/feature/navigation/ui/page/base_page.dart';
+import 'package:core_navigation/core_navigation.dart';
 import 'package:demo_2026/feature/screens/home_screen/ui/navigation/page.dart';
 import 'package:feature_home_screen/feature_home_screen.dart';
 import 'package:flutter/material.dart';

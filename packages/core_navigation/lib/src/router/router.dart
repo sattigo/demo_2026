@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:demo_2026/feature/navigation/router/app_route.dart';
+import 'package:core_navigation/src/router/app_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';

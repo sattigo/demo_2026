@@ -11,9 +11,7 @@ part 'event.dart';
 part 'state.dart';
 
 class AuthScreenBloc extends BaseBloc<AuthScreenEvent, AuthScreenState, AuthScreenAction> {
-  AuthScreenBloc({required LoginUseCase loginUseCase})
-    : _loginUseCase = loginUseCase,
-      super(const AuthScreenState()) {
+  AuthScreenBloc({required LoginUseCase loginUseCase}) : _loginUseCase = loginUseCase, super(const AuthScreenState()) {
     on<_AuthScreenEventEmailChanged>(_onEmailChanged);
     on<_AuthScreenEventPasswordChanged>(_onPasswordChanged);
     on<_AuthScreenEventLoginSubmitted>(_onLoginSubmitted);

@@ -36,12 +36,13 @@ cd packages/app && flutter run         # Запуск приложения
 
 ```
 packages/
-  app/                     # Точка входа, навигация, DI
+  app/                     # Точка входа, DI, сборка роутера (MainRouter)
   core_bloc/               # BaseBloc<Event, State, Action> с action-стримом
   core_chain/              # ChainPipeline: трансформеры и валидаторы
   core_dio/                # DioClient с обработкой ошибок
   core_failure/            # Базовые типы ошибок (Failure, CustomFailure)
   core_platform/           # Определение платформы (Android/iOS)
+  core_navigation/         # AppGoRoute, AppShellRoute, AppRouter, BasePage, переходы
   core_result/             # Result<SUCCESS, FAILURE> (sealed: Success / Error)
   feature_splash_screen/   # Splash-экран
   feature_landing_screen/  # Landing-экран с каруселью
@@ -58,7 +59,7 @@ packages/
 - `push` — сохраняет стек (назад можно): Splash, Landing
 - `go` — очищает стек: Auth, Home, Fork
 
-Навигация через `AppGoRoute`/`AppShellRoute` (обёртки над go_router). Голый `GoRoute` не использовать.
+Навигация через `AppGoRoute`/`AppShellRoute` из `core_navigation` (обёртки над go_router). Голый `GoRoute` не использовать.
 
 ## Архитектура
 
@@ -121,6 +122,15 @@ ChainPipeline.startWithValue(rawData)
 ```
 
 ## Соглашения
+
+### Вынесение кода в пакеты
+
+- Публичное API пакета — только через главный barrel-файл `lib/<package_name>.dart`
+- Внутренние файлы (`src/` или вложенные папки) **не экспортируются** напрямую — только то, что нужно потребителям
+- После создания/изменения пакета запустить в корне монорепозитория:
+  ```bash
+  ignorium gen   # обновить .gitignore для всех пакетов
+  ```
 
 ### Файлы и именование
 

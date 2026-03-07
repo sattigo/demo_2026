@@ -31,9 +31,9 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> with SingleTick
   void _runFadeIn() {
     _controller.reset();
     unawaited(
-      _controller
-          .forward()
-          .whenComplete(() => BlocProvider.of<SplashScreenBloc>(context).add(SplashScreenEvent.fadeInCompleted())),
+      _controller.forward().whenComplete(
+        () => BlocProvider.of<SplashScreenBloc>(context).add(SplashScreenEvent.fadeInCompleted()),
+      ),
     );
   }
 
@@ -65,10 +65,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> with SingleTick
         body: Center(
           child: AnimatedBuilder(
             animation: _controller,
-            builder: (context, child) => Opacity(
-              opacity: _controller.value,
-              child: child,
-            ),
+            builder: (context, child) => Opacity(opacity: _controller.value, child: child),
             child: const Icon(Icons.restaurant, size: 120),
           ),
         ),

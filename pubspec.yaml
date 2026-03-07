@@ -6,6 +6,7 @@ environment:
 
 workspace:
   - packages/app
+  - packages/core_navigation
   - packages/core_bloc
   - packages/core_chain
   - packages/core_dio

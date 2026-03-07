@@ -20,10 +20,7 @@ class AuthScreenView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => AuthScreenBloc(loginUseCase: _loginUseCase),
-      child: AuthScreenCoordinator(
-        onNavigateToHome: _onNavigateToHome,
-        child: const AuthScreenWidget(),
-      ),
+      child: AuthScreenCoordinator(onNavigateToHome: _onNavigateToHome, child: const AuthScreenWidget()),
     );
   }
 }

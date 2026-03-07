@@ -1,5 +1,4 @@
-import 'package:demo_2026/feature/navigation/ui/page/base_page.dart';
-import 'package:demo_2026/feature/navigation/ui/transitions/slide_from_right_transition.dart';
+import 'package:core_navigation/core_navigation.dart';
 import 'package:feature_landing_screen/feature_landing_screen.dart';
 import 'package:flutter/widgets.dart';
 

@@ -57,10 +57,7 @@ class _LandingScreenWidgetState extends State<LandingScreenWidget> {
                 ),
               ),
               BlocBuilder<LandingScreenBloc, LandingScreenState>(
-                builder: (context, state) => _DotsIndicator(
-                  count: _slides.length,
-                  currentIndex: state.currentPage,
-                ),
+                builder: (context, state) => _DotsIndicator(count: _slides.length, currentIndex: state.currentPage),
               ),
               const SizedBox(height: 24),
               Padding(
