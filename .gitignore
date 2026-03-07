@@ -32,3 +32,8 @@ doc/api/
 Icon?
 
 # [ignorium] [END AUTO GENERATE SECTION]
+
+# Generated files
+*.freezed.dart
+*.g.dart
+packages/app/lib/generated/

@@ -15,7 +15,10 @@ dependencies:
   core_result: any
   cupertino_icons: "1.0.8"
   dio: "5.9.2"
-  feature_initial_screen: any
+  feature_auth_screen: any
+  feature_home_screen: any
+  feature_landing_screen: any
+  feature_splash_screen: any
   flutter:
     sdk: "flutter"
   flutter_bloc: "9.1.1"

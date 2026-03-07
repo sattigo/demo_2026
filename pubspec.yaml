@@ -12,7 +12,10 @@ workspace:
   - packages/core_failure
   - packages/core_platform
   - packages/core_result
-  - packages/feature_initial_screen
+  - packages/feature_home_screen
+  - packages/feature_auth_screen
+  - packages/feature_landing_screen
+  - packages/feature_splash_screen
 
 dev_dependencies:
   ignorium: ">=0.3.2"

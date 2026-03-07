@@ -1,0 +1,25 @@
+name: "feature_splash_screen"
+
+version: "1.0.0"
+
+resolution: workspace
+
+dependencies:
+  # Версии должны быть указаны точно, без диапазонов
+  bloc: "9.2.0"
+  core_bloc: any
+  flutter:
+    sdk: "flutter"
+  flutter_bloc: "9.1.1"
+  freezed_annotation: "3.1.0"
+
+dev_dependencies:
+  # Версии должны быть указаны точно, без диапазонов
+  build_runner: "2.12.2"
+  freezed: "3.2.5"
+
+environment:
+  sdk: "3.11.1"
+  flutter: "3.41.4"
+
+publish_to: "none"

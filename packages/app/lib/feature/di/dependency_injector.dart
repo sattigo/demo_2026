@@ -1,7 +1,8 @@
 import 'package:core_dio/core_dio.dart';
 import 'package:core_platform/core_platform.dart';
 import 'package:dio/dio.dart';
-import 'package:feature_initial_screen/feature_initial_screen.dart';
+import 'package:feature_auth_screen/feature_auth_screen.dart';
+import 'package:feature_home_screen/feature_home_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 
@@ -52,20 +53,26 @@ class DependencyInjector {
       ),
     );
 
-    _getIt.registerSingleton<InitialScreenRemoteDataSource>(
-      InitialScreenRemoteDataSourceImpl(dioClient: _getIt<DioClient>()),
+    // Home screen
+    _getIt.registerSingleton<HomeScreenRemoteDataSource>(
+      HomeScreenRemoteDataSourceImpl(dioClient: _getIt<DioClient>()),
     );
 
-    _getIt.registerSingleton<InitialScreenLocalDataSource>(InitialScreenLocalDataSourceImpl());
+    _getIt.registerSingleton<HomeScreenLocalDataSource>(HomeScreenLocalDataSourceImpl());
 
-    _getIt.registerSingleton<InitialScreenRepository>(
-      InitialScreenRepositoryImpl(
-        localDataSource: _getIt<InitialScreenLocalDataSource>(),
-        remoteDataSource: _getIt<InitialScreenRemoteDataSource>(),
+    _getIt.registerSingleton<HomeScreenRepository>(
+      HomeScreenRepositoryImpl(
+        localDataSource: _getIt<HomeScreenLocalDataSource>(),
+        remoteDataSource: _getIt<HomeScreenRemoteDataSource>(),
       ),
     );
 
-    _getIt.registerSingleton<FetchRecipesUseCase>(FetchRecipesUseCase(repository: _getIt<InitialScreenRepository>()));
+    _getIt.registerSingleton<FetchRecipesUseCase>(FetchRecipesUseCase(repository: _getIt<HomeScreenRepository>()));
+
+    // Auth screen
+    _getIt.registerSingleton<AuthRepository>(AuthRepositoryImpl());
+
+    _getIt.registerSingleton<LoginUseCase>(LoginUseCase(repository: _getIt<AuthRepository>()));
   }
 
   static Future<DependencyInjector> create() async {
