@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<module fileurl="file://$PROJECT_DIR$/packages/core_assets/melos_core_assets.iml" filepath="$PROJECT_DIR$/packages/core_assets/melos_core_assets.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/core_bloc/melos_core_bloc.iml" filepath="$PROJECT_DIR$/packages/core_bloc/melos_core_bloc.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/core_chain/melos_core_chain.iml" filepath="$PROJECT_DIR$/packages/core_chain/melos_core_chain.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/core_dio/melos_core_dio.iml" filepath="$PROJECT_DIR$/packages/core_dio/melos_core_dio.iml"/>

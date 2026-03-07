@@ -136,6 +136,7 @@ ChainPipeline.startWithValue(rawData)
 
 - Модели: `<name>.build.dart` (не просто `<name>.dart`)
 - Генерируемые файлы: `*.build.freezed.dart`, `*.build.g.dart` — не редактировать
+- Исключение: `core_assets` использует `assets.gen.dart` — flutter_gen не поддерживает кастомное имя выходного файла
 - Контракты: `contract.dart`; реализации: `impl.dart`
 - BLoC-файлы: `bloc.build.dart`, `event.dart`, `state.dart`, `action.dart` в папке `bloc/`
 

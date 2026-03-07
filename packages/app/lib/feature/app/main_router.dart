@@ -1,5 +1,5 @@
-import 'package:demo_2026/feature/app/app.dart';
 import 'package:core_navigation/core_navigation.dart';
+import 'package:demo_2026/feature/app/app.dart';
 import 'package:demo_2026/feature/screens/auth_screen/route.dart';
 import 'package:demo_2026/feature/screens/fork_screen/route.dart';
 import 'package:demo_2026/feature/screens/home_screen/ui/navigation/route.dart';
