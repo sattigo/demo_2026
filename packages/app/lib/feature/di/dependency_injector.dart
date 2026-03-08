@@ -3,6 +3,7 @@ import 'package:core_platform/core_platform.dart';
 import 'package:dio/dio.dart';
 import 'package:feature_auth_screen/feature_auth_screen.dart';
 import 'package:feature_home_screen/feature_home_screen.dart';
+import 'package:feature_landing_screen/feature_landing_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 
@@ -52,6 +53,22 @@ class DependencyInjector {
         defaultFailureHandler: _getIt<DefaultDioFailureHandler>(),
       ),
     );
+
+    // Landing screen
+    _getIt.registerSingleton<LandingScreenRemoteDataSource>(
+      LandingScreenRemoteDataSourceImpl(dioClient: _getIt<DioClient>()),
+    );
+
+    _getIt.registerSingleton<LandingScreenLocalDataSource>(LandingScreenLocalDataSourceImpl());
+
+    _getIt.registerSingleton<LandingScreenRepository>(
+      LandingScreenRepositoryImpl(
+        localDataSource: _getIt<LandingScreenLocalDataSource>(),
+        remoteDataSource: _getIt<LandingScreenRemoteDataSource>(),
+      ),
+    );
+
+    _getIt.registerSingleton<FetchSlidesUseCase>(FetchSlidesUseCase(repository: _getIt<LandingScreenRepository>()));
 
     // Home screen
     _getIt.registerSingleton<HomeScreenRemoteDataSource>(

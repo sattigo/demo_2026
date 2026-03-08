@@ -7,6 +7,7 @@ import 'package:demo_2026/feature/screens/landing_screen/route.dart';
 import 'package:demo_2026/feature/screens/splash_screen/route.dart';
 import 'package:feature_auth_screen/feature_auth_screen.dart';
 import 'package:feature_home_screen/feature_home_screen.dart';
+import 'package:feature_landing_screen/feature_landing_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainRouter extends AppRouter {
@@ -16,6 +17,7 @@ class MainRouter extends AppRouter {
         routes: [
           SplashScreenRoute(
             onNavigateToLanding: (context) => LandingScreenRoute(
+              fetchSlidesUseCase: App.injector.get<FetchSlidesUseCase>(),
               onNavigateToAuth: (context) => AuthScreenRoute(
                 loginUseCase: App.injector.get<LoginUseCase>(),
                 onNavigateToHome: (context) => HomeScreenRoute(
@@ -26,6 +28,7 @@ class MainRouter extends AppRouter {
             ).pushNamed(context),
           ),
           LandingScreenRoute(
+            fetchSlidesUseCase: App.injector.get<FetchSlidesUseCase>(),
             onNavigateToAuth: (context) => AuthScreenRoute(
               loginUseCase: App.injector.get<LoginUseCase>(),
               onNavigateToHome: (context) => HomeScreenRoute(
