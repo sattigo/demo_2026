@@ -42,6 +42,7 @@ packages/
   core_dio/                # DioClient с обработкой ошибок
   core_failure/            # Базовые типы ошибок (Failure, CustomFailure)
   core_platform/           # Определение платформы (Android/iOS)
+  core_l10n/               # Локализация (flutter_intl): S класс, .arb файлы, делегат
   core_navigation/         # AppGoRoute, AppShellRoute, AppRouter, BasePage, переходы
   core_result/             # Result<SUCCESS, FAILURE> (sealed: Success / Error)
   feature_splash_screen/   # Splash-экран
@@ -150,4 +151,24 @@ ChainPipeline.startWithValue(rawData)
 
 ### Локализация
 
-- `flutter_intl` + `intl_utils`, основная локаль: `ru`
+- Пакет: `core_l10n` — подключить как `core_l10n: any`, импорт `package:core_l10n/core_l10n.dart`
+- `flutter_intl` + `intl_utils`, основная локаль: `ru`, `.arb` файлы в `packages/core_l10n/lib/l10n/`
+- Регенерация после изменения `.arb`: `melos run gen` (включает `intl_utils:generate`)
+
+#### Именование ключей локализации
+
+```
+{featureName}_{clickability}_{uniqueness}_{stringName}
+```
+
+- `featureName` — camelCase название экрана: `landingScreen`, `homeScreen`, `forkScreen`, ...
+- `clickability` — `clickable` (кнопки, ссылки) / `notClickable` (тексты, заголовки)
+- `uniqueness` — `original` для строк уникальных для этого места; для переиспользуемых — своё слово
+- `stringName` — описание строки: `appBarText`, `getStartedButton`, `tryAgainButton`, ...
+
+Примеры:
+```
+landingScreen_clickable_original_getStartedButton
+homeScreen_notClickable_original_appBarText
+forkScreen_clickable_original_toForkScreenButton
+```

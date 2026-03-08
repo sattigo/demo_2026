@@ -1,4 +1,4 @@
-import 'package:demo_2026/generated/l10n.dart';
+import 'package:core_l10n/core_l10n.dart';
 import 'package:flutter/material.dart';
 
 class ForkScreenWidget extends StatelessWidget {

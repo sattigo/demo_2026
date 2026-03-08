@@ -1,4 +1,4 @@
-name: "feature_landing_screen"
+name: "core_l10n"
 
 version: "1.0.0"
 
@@ -6,26 +6,19 @@ resolution: workspace
 
 dependencies:
   # Версии должны быть указаны точно, без диапазонов
-  bloc: "9.2.0"
-  core_assets: any
-  core_bloc: any
-  core_chain: any
-  core_dio: any
-  core_failure: any
-  core_l10n: any
-  core_result: any
-  dio: "5.9.2"
   flutter:
     sdk: "flutter"
-  flutter_bloc: "9.1.1"
-  freezed_annotation: "3.1.0"
-  json_annotation: "4.11.0"
+  intl: "0.20.2"
 
 dev_dependencies:
   # Версии должны быть указаны точно, без диапазонов
-  build_runner: "2.12.2"
-  freezed: "3.2.5"
-  json_serializable: "6.13.0"
+  intl_utils: "2.8.14"
+
+flutter_intl:
+  enabled: true
+  main_locale: ru
+  arb_dir: lib/l10n
+  output_dir: lib/generated
 
 environment:
   sdk: "3.11.1"

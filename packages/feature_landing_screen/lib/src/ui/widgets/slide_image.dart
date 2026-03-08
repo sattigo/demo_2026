@@ -22,9 +22,6 @@ class SlideImage extends StatelessWidget {
   }
 
   Widget _placeholder(BuildContext context) {
-    return ColoredBox(
-      color: Theme.of(context).colorScheme.primaryContainer,
-      child: const Icon(Icons.image, size: 64),
-    );
+    return ColoredBox(color: Theme.of(context).colorScheme.primaryContainer, child: const Icon(Icons.image, size: 64));
   }
 }

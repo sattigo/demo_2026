@@ -1,7 +1,7 @@
+import 'package:core_l10n/core_l10n.dart';
 import 'package:demo_2026/feature/app/app.dart';
 import 'package:demo_2026/feature/ui_kit/platform.dart';
 import 'package:demo_2026/feature/ui_kit/text_scale_factor_provider.dart';
-import 'package:demo_2026/generated/l10n.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';

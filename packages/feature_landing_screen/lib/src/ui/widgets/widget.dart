@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:core_l10n/core_l10n.dart';
 import 'package:feature_landing_screen/src/ui/bloc/bloc.build.dart';
 import 'package:feature_landing_screen/src/ui/widgets/dots_indicator.dart';
 import 'package:feature_landing_screen/src/ui/widgets/slide_page.dart';
@@ -77,7 +78,7 @@ class _LandingScreenWidgetState extends State<LandingScreenWidget> {
                       onPressed: () =>
                           BlocProvider.of<LandingScreenBloc>(context).add(LandingScreenEvent.getStartedTapped()),
                       style: ElevatedButton.styleFrom(minimumSize: const Size.fromHeight(48)),
-                      child: const Text('Get Started'),
+                      child: Text(S.of(context).landingScreen_clickable_original_getStartedButton),
                     ),
                   ),
                   const SizedBox(height: 32),
