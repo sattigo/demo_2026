@@ -4,22 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreenWidget extends StatelessWidget {
-  const HomeScreenWidget({required void Function(BuildContext context) onGoToForkScreen, super.key})
-    : _onGoToForkScreen = onGoToForkScreen;
-
-  final void Function(BuildContext context) _onGoToForkScreen;
-
-  Future<void> _onButtonPressed(BuildContext context) async {
-    if (context.mounted) {
-      _onGoToForkScreen(context);
-    }
-  }
-
-  Future<void> _onFetchRecipes(BuildContext context) async {
-    if (context.mounted) {
-      BlocProvider.of<HomeScreenBloc>(context).add(HomeScreenEvent.fetchRecipes());
-    }
-  }
+  const HomeScreenWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +19,7 @@ class HomeScreenWidget extends StatelessWidget {
             return Center(
               child: MaterialButton(
                 child: Text(S.of(context).homeScreen_clickable_original_tryAgainButton),
-                onPressed: () => _onFetchRecipes(context),
+                onPressed: () => BlocProvider.of<HomeScreenBloc>(context).add(HomeScreenEvent.fetchRecipes()),
               ),
             );
           } else {
@@ -48,12 +33,13 @@ class HomeScreenWidget extends StatelessWidget {
                 children: [
                   MaterialButton(
                     child: Text(S.of(context).homeScreen_clickable_original_toForkScreenButton),
-                    onPressed: () => _onButtonPressed(context),
+                    onPressed: () =>
+                        BlocProvider.of<HomeScreenBloc>(context).add(HomeScreenEvent.goToMapScreenTapped()),
                   ),
                   const SizedBox(height: 8),
                   MaterialButton(
                     child: Text(S.of(context).homeScreen_clickable_original_fetchRecipesButton),
-                    onPressed: () => _onFetchRecipes(context),
+                    onPressed: () => BlocProvider.of<HomeScreenBloc>(context).add(HomeScreenEvent.fetchRecipes()),
                   ),
                   if (recipesList != null && recipesList.isNotEmpty) Text('${recipesList.length}'),
                 ],

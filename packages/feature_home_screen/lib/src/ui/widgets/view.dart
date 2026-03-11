@@ -6,21 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreenView extends StatelessWidget {
-  const HomeScreenView({
-    required FetchRecipesUseCase fetchRecipesUseCase,
-    required void Function(BuildContext context) onGoToForkScreen,
-    super.key,
-  }) : _fetchRecipesUseCase = fetchRecipesUseCase,
-       _onGoToForkScreen = onGoToForkScreen;
+  const HomeScreenView({required FetchRecipesUseCase fetchRecipesUseCase, required String mapRouteName, super.key})
+    : _fetchRecipesUseCase = fetchRecipesUseCase,
+      _mapRouteName = mapRouteName;
 
   final FetchRecipesUseCase _fetchRecipesUseCase;
-  final void Function(BuildContext context) _onGoToForkScreen;
+  final String _mapRouteName;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => HomeScreenBloc(fetchRecipesUseCase: _fetchRecipesUseCase),
-      child: HomeScreenCoordinator(child: HomeScreenWidget(onGoToForkScreen: _onGoToForkScreen)),
+      child: HomeScreenCoordinator(mapRouteName: _mapRouteName, child: const HomeScreenWidget()),
     );
   }
 }

@@ -5,20 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeScreenRoute extends AppGoRoute<void> {
-  HomeScreenRoute({
-    required FetchRecipesUseCase fetchRecipesUseCase,
-    required void Function(BuildContext context) onGoToForkScreen,
-  }) : _fetchRecipesUseCase = fetchRecipesUseCase,
-       _onGoToForkScreen = onGoToForkScreen;
+  HomeScreenRoute({required FetchRecipesUseCase fetchRecipesUseCase, required String mapRouteName})
+    : _fetchRecipesUseCase = fetchRecipesUseCase,
+      _mapRouteName = mapRouteName;
+
+  static const routeName = 'HomeScreenRoute';
 
   final FetchRecipesUseCase _fetchRecipesUseCase;
-  final void Function(BuildContext context) _onGoToForkScreen;
+  final String _mapRouteName;
+
+  @override
+  String get name => routeName;
 
   @override
   String get path => '/home';
 
   @override
   BasePage buildPage(BuildContext context, GoRouterState state) {
-    return HomeScreenPage(fetchRecipesUseCase: _fetchRecipesUseCase, onGoToForkScreen: _onGoToForkScreen);
+    return HomeScreenPage(fetchRecipesUseCase: _fetchRecipesUseCase, mapRouteName: _mapRouteName);
   }
 }

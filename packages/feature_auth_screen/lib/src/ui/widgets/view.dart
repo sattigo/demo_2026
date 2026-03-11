@@ -6,21 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthScreenView extends StatelessWidget {
-  const AuthScreenView({
-    required LoginUseCase loginUseCase,
-    required void Function(BuildContext context) onNavigateToHome,
-    super.key,
-  }) : _loginUseCase = loginUseCase,
-       _onNavigateToHome = onNavigateToHome;
+  const AuthScreenView({required LoginUseCase loginUseCase, required String homeRouteName, super.key})
+    : _loginUseCase = loginUseCase,
+      _homeRouteName = homeRouteName;
 
   final LoginUseCase _loginUseCase;
-  final void Function(BuildContext context) _onNavigateToHome;
+  final String _homeRouteName;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => AuthScreenBloc(loginUseCase: _loginUseCase),
-      child: AuthScreenCoordinator(onNavigateToHome: _onNavigateToHome, child: const AuthScreenWidget()),
+      child: AuthScreenCoordinator(homeRouteName: _homeRouteName, child: const AuthScreenWidget()),
     );
   }
 }

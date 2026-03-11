@@ -1,12 +1,18 @@
+import 'dart:async';
+
+import 'package:core_navigation/core_navigation.dart';
 import 'package:feature_home_screen/src/ui/bloc/bloc.build.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class HomeScreenCoordinator extends StatefulWidget {
-  const HomeScreenCoordinator({required Widget child, super.key}) : _child = child;
+  const HomeScreenCoordinator({required Widget child, required String mapRouteName, super.key})
+    : _child = child,
+      _mapRouteName = mapRouteName;
 
   final Widget _child;
+  final String _mapRouteName;
 
   @override
   State<HomeScreenCoordinator> createState() => _HomeScreenCoordinatorState();
@@ -17,16 +23,20 @@ class _HomeScreenCoordinatorState extends State<HomeScreenCoordinator> {
   void initState() {
     super.initState();
     if (context.mounted) {
-      BlocProvider.of<HomeScreenBloc>(context).actions.listen(_initialScreenActionsListener);
+      BlocProvider.of<HomeScreenBloc>(context).actions.listen(_actionsListener);
     }
   }
 
-  void _initialScreenActionsListener(HomeScreenAction action) {
+  void _actionsListener(HomeScreenAction action) {
     switch (action) {
       case HomeScreenActionSomeAction():
         FToast()
           ..init(context)
           ..showToast(child: const Text('some action was called'));
+      case HomeScreenActionGoToMapScreen():
+        if (context.mounted) {
+          unawaited(context.pushNamed<void>(widget._mapRouteName));
+        }
     }
   }
 

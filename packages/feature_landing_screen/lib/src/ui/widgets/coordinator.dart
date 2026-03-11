@@ -1,17 +1,17 @@
+import 'dart:async';
+
+import 'package:core_navigation/core_navigation.dart';
 import 'package:feature_landing_screen/src/ui/bloc/bloc.build.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LandingScreenCoordinator extends StatefulWidget {
-  const LandingScreenCoordinator({
-    required Widget child,
-    required void Function(BuildContext context) onNavigateToAuth,
-    super.key,
-  }) : _child = child,
-       _onNavigateToAuth = onNavigateToAuth;
+  const LandingScreenCoordinator({required Widget child, required String authRouteName, super.key})
+    : _child = child,
+      _authRouteName = authRouteName;
 
   final Widget _child;
-  final void Function(BuildContext context) _onNavigateToAuth;
+  final String _authRouteName;
 
   @override
   State<LandingScreenCoordinator> createState() => _LandingScreenCoordinatorState();
@@ -30,7 +30,7 @@ class _LandingScreenCoordinatorState extends State<LandingScreenCoordinator> {
     switch (action) {
       case LandingScreenActionNavigateToAuth():
         if (context.mounted) {
-          widget._onNavigateToAuth(context);
+          unawaited(context.pushNamed<void>(widget._authRouteName));
         }
     }
   }

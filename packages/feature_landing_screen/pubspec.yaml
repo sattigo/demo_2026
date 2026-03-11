@@ -13,6 +13,7 @@ dependencies:
   core_dio: any
   core_failure: any
   core_l10n: any
+  core_navigation: any
   core_result: any
   dio: "5.9.2"
   flutter:

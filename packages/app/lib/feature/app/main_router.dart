@@ -15,38 +15,15 @@ class MainRouter extends AppRouter {
     : super(
         navigatorKey: App.injector.get<GlobalKey<NavigatorState>>(),
         routes: [
-          SplashScreenRoute(
-            onNavigateToLanding: (context) => LandingScreenRoute(
-              fetchSlidesUseCase: App.injector.get<FetchSlidesUseCase>(),
-              onNavigateToAuth: (context) => AuthScreenRoute(
-                loginUseCase: App.injector.get<LoginUseCase>(),
-                onNavigateToHome: (context) => HomeScreenRoute(
-                  fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>(),
-                  onGoToForkScreen: (context) => MapScreenRoute().pushNamed(context),
-                ).goNamed(context),
-              ).pushNamed(context),
-            ).pushNamed(context),
-          ),
+          SplashScreenRoute(landingRouteName: LandingScreenRoute.routeName),
           LandingScreenRoute(
             fetchSlidesUseCase: App.injector.get<FetchSlidesUseCase>(),
-            onNavigateToAuth: (context) => AuthScreenRoute(
-              loginUseCase: App.injector.get<LoginUseCase>(),
-              onNavigateToHome: (context) => HomeScreenRoute(
-                fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>(),
-                onGoToForkScreen: (context) => MapScreenRoute().pushNamed(context),
-              ).goNamed(context),
-            ).pushNamed(context),
+            authRouteName: AuthScreenRoute.routeName,
           ),
-          AuthScreenRoute(
-            loginUseCase: App.injector.get<LoginUseCase>(),
-            onNavigateToHome: (context) => HomeScreenRoute(
-              fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>(),
-              onGoToForkScreen: (context) => MapScreenRoute().pushNamed(context),
-            ).goNamed(context),
-          ),
+          AuthScreenRoute(loginUseCase: App.injector.get<LoginUseCase>(), homeRouteName: HomeScreenRoute.routeName),
           HomeScreenRoute(
             fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>(),
-            onGoToForkScreen: (context) => MapScreenRoute().pushNamed(context),
+            mapRouteName: MapScreenRoute.routeName,
           ),
           MapScreenRoute(),
         ],

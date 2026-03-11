@@ -6,21 +6,18 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LandingScreenView extends StatelessWidget {
-  const LandingScreenView({
-    required FetchSlidesUseCase fetchSlidesUseCase,
-    required void Function(BuildContext context) onNavigateToAuth,
-    super.key,
-  }) : _fetchSlidesUseCase = fetchSlidesUseCase,
-       _onNavigateToAuth = onNavigateToAuth;
+  const LandingScreenView({required FetchSlidesUseCase fetchSlidesUseCase, required String authRouteName, super.key})
+    : _fetchSlidesUseCase = fetchSlidesUseCase,
+      _authRouteName = authRouteName;
 
   final FetchSlidesUseCase _fetchSlidesUseCase;
-  final void Function(BuildContext context) _onNavigateToAuth;
+  final String _authRouteName;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => LandingScreenBloc(fetchSlidesUseCase: _fetchSlidesUseCase),
-      child: LandingScreenCoordinator(onNavigateToAuth: _onNavigateToAuth, child: const LandingScreenWidget()),
+      child: LandingScreenCoordinator(authRouteName: _authRouteName, child: const LandingScreenWidget()),
     );
   }
 }

@@ -17,12 +17,17 @@ class HomeScreenBloc extends BaseBloc<HomeScreenEvent, HomeScreenState, HomeScre
       super(const HomeScreenState()) {
     on<_HomeScreenEventSomeEvent>(_onSomeEvent);
     on<_HomeScreenEventFetchRecipes>(_onFetchRecipes);
+    on<_HomeScreenEventGoToMapScreenTapped>(_onGoToMapScreenTapped);
   }
 
   final FetchRecipesUseCase _fetchRecipesUseCase;
 
   void _onSomeEvent(_HomeScreenEventSomeEvent event, Emitter<HomeScreenState> emit) {
     emitAction(HomeScreenAction.someAction());
+  }
+
+  void _onGoToMapScreenTapped(_HomeScreenEventGoToMapScreenTapped event, Emitter<HomeScreenState> emit) {
+    emitAction(HomeScreenAction.goToMapScreen());
   }
 
   Future<void> _onFetchRecipes(_HomeScreenEventFetchRecipes event, Emitter<HomeScreenState> emit) async {

@@ -5,16 +5,15 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreenView extends StatelessWidget {
-  const SplashScreenView({required void Function(BuildContext context) onNavigateToLanding, super.key})
-    : _onNavigateToLanding = onNavigateToLanding;
+  const SplashScreenView({required String landingRouteName, super.key}) : _landingRouteName = landingRouteName;
 
-  final void Function(BuildContext context) _onNavigateToLanding;
+  final String _landingRouteName;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => SplashScreenBloc(),
-      child: SplashScreenCoordinator(onNavigateToLanding: _onNavigateToLanding, child: const SplashScreenWidget()),
+      child: SplashScreenCoordinator(landingRouteName: _landingRouteName, child: const SplashScreenWidget()),
     );
   }
 }

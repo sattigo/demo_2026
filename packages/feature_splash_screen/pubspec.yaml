@@ -9,6 +9,7 @@ dependencies:
   bloc: "9.2.0"
   core_assets: any
   core_bloc: any
+  core_navigation: any
   flutter:
     sdk: "flutter"
   flutter_bloc: "9.1.1"

@@ -4,16 +4,20 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashScreenRoute extends AppGoRoute<void> {
-  SplashScreenRoute({required void Function(BuildContext context) onNavigateToLanding})
-    : _onNavigateToLanding = onNavigateToLanding;
+  SplashScreenRoute({required String landingRouteName}) : _landingRouteName = landingRouteName;
 
-  final void Function(BuildContext context) _onNavigateToLanding;
+  static const routeName = 'SplashScreenRoute';
+
+  final String _landingRouteName;
+
+  @override
+  String get name => routeName;
 
   @override
   String get path => '/';
 
   @override
   BasePage buildPage(BuildContext context, GoRouterState state) {
-    return SplashScreenPage(onNavigateToLanding: _onNavigateToLanding);
+    return SplashScreenPage(landingRouteName: _landingRouteName);
   }
 }

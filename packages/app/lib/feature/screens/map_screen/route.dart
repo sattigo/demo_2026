@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class MapScreenRoute extends AppGoRoute<void> {
+  static const routeName = 'MapScreenRoute';
+
+  @override
+  String get name => routeName;
+
   @override
   String get path => '/fork';
 

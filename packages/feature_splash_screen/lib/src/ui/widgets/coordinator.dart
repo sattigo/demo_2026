@@ -1,17 +1,17 @@
+import 'dart:async';
+
+import 'package:core_navigation/core_navigation.dart';
 import 'package:feature_splash_screen/src/ui/bloc/bloc.build.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreenCoordinator extends StatefulWidget {
-  const SplashScreenCoordinator({
-    required Widget child,
-    required void Function(BuildContext context) onNavigateToLanding,
-    super.key,
-  }) : _child = child,
-       _onNavigateToLanding = onNavigateToLanding;
+  const SplashScreenCoordinator({required Widget child, required String landingRouteName, super.key})
+    : _child = child,
+      _landingRouteName = landingRouteName;
 
   final Widget _child;
-  final void Function(BuildContext context) _onNavigateToLanding;
+  final String _landingRouteName;
 
   @override
   State<SplashScreenCoordinator> createState() => _SplashScreenCoordinatorState();
@@ -30,7 +30,7 @@ class _SplashScreenCoordinatorState extends State<SplashScreenCoordinator> {
     switch (action) {
       case SplashScreenActionNavigateToLanding():
         if (context.mounted) {
-          widget._onNavigateToLanding(context);
+          unawaited(context.pushNamed<void>(widget._landingRouteName));
         }
     }
   }

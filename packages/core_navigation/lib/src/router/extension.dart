@@ -51,4 +51,8 @@ extension AppRouterHelper on BuildContext {
   bool canPop() => GoRouter.of(this).canPop();
 
   void pop<T extends Object?>([T? result]) => GoRouter.of(this).pop(result);
+
+  void goNamed(String name, {Object? extra}) => GoRouter.of(this).goNamed(name, extra: extra);
+
+  Future<T?> pushNamed<T>(String name, {Object? extra}) => GoRouter.of(this).pushNamed<T>(name, extra: extra);
 }

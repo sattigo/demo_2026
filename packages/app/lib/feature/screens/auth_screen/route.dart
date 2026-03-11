@@ -5,18 +5,23 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class AuthScreenRoute extends AppGoRoute<void> {
-  AuthScreenRoute({required LoginUseCase loginUseCase, required void Function(BuildContext context) onNavigateToHome})
+  AuthScreenRoute({required LoginUseCase loginUseCase, required String homeRouteName})
     : _loginUseCase = loginUseCase,
-      _onNavigateToHome = onNavigateToHome;
+      _homeRouteName = homeRouteName;
+
+  static const routeName = 'AuthScreenRoute';
 
   final LoginUseCase _loginUseCase;
-  final void Function(BuildContext context) _onNavigateToHome;
+  final String _homeRouteName;
+
+  @override
+  String get name => routeName;
 
   @override
   String get path => '/auth';
 
   @override
   BasePage buildPage(BuildContext context, GoRouterState state) {
-    return AuthScreenPage(loginUseCase: _loginUseCase, onNavigateToHome: _onNavigateToHome);
+    return AuthScreenPage(loginUseCase: _loginUseCase, homeRouteName: _homeRouteName);
   }
 }

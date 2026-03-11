@@ -9,13 +9,13 @@ dependencies:
   bloc: "9.2.0"
   core_bloc: any
   core_failure: any
+  core_navigation: any
   core_result: any
   flutter:
     sdk: "flutter"
   flutter_bloc: "9.1.1"
   fluttertoast: "9.0.0"
   freezed_annotation: "3.1.0"
-  go_router: "17.1.0"
 
 dev_dependencies:
   # Версии должны быть указаны точно, без диапазонов

@@ -37,8 +37,8 @@ melos:
       description: Analyze all packages
 
     format:
-      run: melos exec -- dart format . --line-length 120
-      description: Format all packages (line length 120)
+      run: melos exec --ignore="core_l10n" -- dart format . --line-length 120
+      description: Format all packages except core_l10n (line length 120)
 
     test:
       run: melos exec -- flutter test
