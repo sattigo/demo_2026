@@ -19,5 +19,7 @@
   "homeScreen_clickable_original_fetchRecipesButton": "Fetch recipes",
   "@homeScreen_clickable_original_fetchRecipesButton": {},
   "homeScreen_clickable_original_tryAgainButton": "Try again",
-  "@homeScreen_clickable_original_tryAgainButton": {}
+  "@homeScreen_clickable_original_tryAgainButton": {},
+  "mapScreen_notClickable_original_appBarText": "Map",
+  "@mapScreen_notClickable_original_appBarText": {}
 }

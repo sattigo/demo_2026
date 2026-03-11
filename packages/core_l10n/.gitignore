@@ -20,3 +20,6 @@ build/
 Icon?
 
 # [ignorium] [END AUTO GENERATE SECTION]
+
+# Generated localization files
+lib/generated/

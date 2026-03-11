@@ -19,5 +19,7 @@
   "homeScreen_clickable_original_fetchRecipesButton": "Загрузить рецепты",
   "@homeScreen_clickable_original_fetchRecipesButton": {},
   "homeScreen_clickable_original_tryAgainButton": "Попробовать снова",
-  "@homeScreen_clickable_original_tryAgainButton": {}
+  "@homeScreen_clickable_original_tryAgainButton": {},
+  "mapScreen_notClickable_original_appBarText": "Карта",
+  "@mapScreen_notClickable_original_appBarText": {}
 }

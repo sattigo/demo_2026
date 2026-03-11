@@ -1,7 +1,6 @@
 import 'package:feature_map_screen/src/ui/bloc/bloc.build.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class MapScreenCoordinator extends StatefulWidget {
   const MapScreenCoordinator({required Widget child, super.key}) : _child = child;
@@ -23,10 +22,8 @@ class _MapScreenCoordinatorState extends State<MapScreenCoordinator> {
 
   void _actionsListener(MapScreenAction action) {
     switch (action) {
-      case MapScreenActionSomeAction():
-        FToast()
-          ..init(context)
-          ..showToast(child: const Text('some action was called'));
+      case MapScreenActionPlaceholder():
+        break;
     }
   }
 
