@@ -32,7 +32,7 @@ class HomeScreenWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MaterialButton(
-                    child: Text(S.of(context).homeScreen_clickable_original_toForkScreenButton),
+                    child: Text(S.of(context).homeScreen_clickable_original_toMapScreenButton),
                     onPressed: () =>
                         BlocProvider.of<HomeScreenBloc>(context).add(HomeScreenEvent.goToMapScreenTapped()),
                   ),

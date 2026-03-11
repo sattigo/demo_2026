@@ -13,12 +13,16 @@ class SplashScreenWidget extends StatefulWidget {
 }
 
 class _SplashScreenWidgetState extends State<SplashScreenWidget> with SingleTickerProviderStateMixin {
+  static const _animationDuration = Duration(milliseconds: 800);
+  static const _imageSize = 120.0;
+  static const _imageBorderRadius = 15.0;
+
   late final AnimationController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 800));
+    _controller = AnimationController(vsync: this, duration: _animationDuration);
     BlocProvider.of<SplashScreenBloc>(context).add(SplashScreenEvent.started());
     _runFadeIn();
   }
@@ -67,7 +71,10 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> with SingleTick
           child: AnimatedBuilder(
             animation: _controller,
             builder: (context, child) => Opacity(opacity: _controller.value, child: child),
-            child: Assets.images.appImage.pkg(width: 120),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(_imageBorderRadius),
+              child: Assets.images.appImage.pkg(width: _imageSize),
+            ),
           ),
         ),
       ),
