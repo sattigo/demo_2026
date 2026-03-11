@@ -6,7 +6,7 @@ export 'src/data/data_sources/remote/impl.dart';
 export 'src/data/repositories/impl.dart';
 
 // Domain
-export 'src/domain/repositories/repository_contract.dart';
+export 'src/domain/repositories/contract.dart';
 export 'src/domain/use_cases/fetch_recipes_use_case.dart';
 
 // UI entry point

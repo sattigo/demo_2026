@@ -20,6 +20,7 @@ dependencies:
   feature_auth_screen: any
   feature_home_screen: any
   feature_landing_screen: any
+  feature_map_screen: any
   feature_splash_screen: any
   flutter:
     sdk: "flutter"

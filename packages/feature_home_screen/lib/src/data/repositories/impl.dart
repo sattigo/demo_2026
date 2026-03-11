@@ -3,7 +3,7 @@ import 'package:core_result/core_result.dart';
 import 'package:feature_home_screen/src/data/data_sources/local/contract.dart';
 import 'package:feature_home_screen/src/data/data_sources/remote/contract.dart';
 import 'package:feature_home_screen/src/domain/models/recipe.build.dart';
-import 'package:feature_home_screen/src/domain/repositories/repository_contract.dart';
+import 'package:feature_home_screen/src/domain/repositories/contract.dart';
 
 class HomeScreenRepositoryImpl implements HomeScreenRepository {
   HomeScreenRepositoryImpl({

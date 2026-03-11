@@ -15,6 +15,7 @@
 <module fileurl="file://$PROJECT_DIR$/packages/feature_auth_screen/melos_feature_auth_screen.iml" filepath="$PROJECT_DIR$/packages/feature_auth_screen/melos_feature_auth_screen.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/feature_home_screen/melos_feature_home_screen.iml" filepath="$PROJECT_DIR$/packages/feature_home_screen/melos_feature_home_screen.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/feature_landing_screen/melos_feature_landing_screen.iml" filepath="$PROJECT_DIR$/packages/feature_landing_screen/melos_feature_landing_screen.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/feature_map_screen/melos_feature_map_screen.iml" filepath="$PROJECT_DIR$/packages/feature_map_screen/melos_feature_map_screen.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/feature_splash_screen/melos_feature_splash_screen.iml" filepath="$PROJECT_DIR$/packages/feature_splash_screen/melos_feature_splash_screen.iml"/>
 <module fileurl="file://$PROJECT_DIR$/melos_demo_2026_workspace.iml" filepath="$PROJECT_DIR$/melos_demo_2026_workspace.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/feature_initial_screen/melos_feature_initial_screen.iml" filepath="$PROJECT_DIR$/packages/feature_initial_screen/melos_feature_initial_screen.iml"/>

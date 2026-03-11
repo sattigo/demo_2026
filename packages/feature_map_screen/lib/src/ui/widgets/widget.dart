@@ -1,8 +1,8 @@
 import 'package:core_l10n/core_l10n.dart';
 import 'package:flutter/material.dart';
 
-class ForkScreenWidget extends StatelessWidget {
-  const ForkScreenWidget({super.key});
+class MapScreenWidget extends StatelessWidget {
+  const MapScreenWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

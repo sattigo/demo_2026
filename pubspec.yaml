@@ -17,6 +17,7 @@ workspace:
   - packages/core_result
   - packages/feature_home_screen
   - packages/feature_auth_screen
+  - packages/feature_map_screen
   - packages/feature_landing_screen
   - packages/feature_splash_screen
 

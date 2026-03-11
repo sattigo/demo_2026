@@ -1,9 +1,9 @@
 import 'package:core_navigation/core_navigation.dart';
 import 'package:demo_2026/feature/app/app.dart';
 import 'package:demo_2026/feature/screens/auth_screen/route.dart';
-import 'package:demo_2026/feature/screens/fork_screen/route.dart';
 import 'package:demo_2026/feature/screens/home_screen/ui/navigation/route.dart';
 import 'package:demo_2026/feature/screens/landing_screen/route.dart';
+import 'package:demo_2026/feature/screens/map_screen/route.dart';
 import 'package:demo_2026/feature/screens/splash_screen/route.dart';
 import 'package:feature_auth_screen/feature_auth_screen.dart';
 import 'package:feature_home_screen/feature_home_screen.dart';
@@ -22,7 +22,7 @@ class MainRouter extends AppRouter {
                 loginUseCase: App.injector.get<LoginUseCase>(),
                 onNavigateToHome: (context) => HomeScreenRoute(
                   fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>(),
-                  onGoToForkScreen: (context) => ForkScreenRoute().pushNamed(context),
+                  onGoToForkScreen: (context) => MapScreenRoute().pushNamed(context),
                 ).goNamed(context),
               ).pushNamed(context),
             ).pushNamed(context),
@@ -33,7 +33,7 @@ class MainRouter extends AppRouter {
               loginUseCase: App.injector.get<LoginUseCase>(),
               onNavigateToHome: (context) => HomeScreenRoute(
                 fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>(),
-                onGoToForkScreen: (context) => ForkScreenRoute().pushNamed(context),
+                onGoToForkScreen: (context) => MapScreenRoute().pushNamed(context),
               ).goNamed(context),
             ).pushNamed(context),
           ),
@@ -41,14 +41,14 @@ class MainRouter extends AppRouter {
             loginUseCase: App.injector.get<LoginUseCase>(),
             onNavigateToHome: (context) => HomeScreenRoute(
               fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>(),
-              onGoToForkScreen: (context) => ForkScreenRoute().pushNamed(context),
+              onGoToForkScreen: (context) => MapScreenRoute().pushNamed(context),
             ).goNamed(context),
           ),
           HomeScreenRoute(
             fetchRecipesUseCase: App.injector.get<FetchRecipesUseCase>(),
-            onGoToForkScreen: (context) => ForkScreenRoute().pushNamed(context),
+            onGoToForkScreen: (context) => MapScreenRoute().pushNamed(context),
           ),
-          ForkScreenRoute(),
+          MapScreenRoute(),
         ],
       );
 }

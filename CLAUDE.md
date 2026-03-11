@@ -132,6 +132,7 @@ ChainPipeline.startWithValue(rawData)
   ```bash
   ignorium gen   # обновить .gitignore для всех пакетов
   ```
+- **Внимание:** `ignorium gen` затирает строку `!assets/icons/` в `packages/core_assets/.gitignore` — после запуска восстановить её вручную на строке 28
 
 ### Файлы и именование
 

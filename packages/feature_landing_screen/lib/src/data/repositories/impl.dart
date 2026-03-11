@@ -4,7 +4,7 @@ import 'package:feature_landing_screen/src/data/data_sources/local/contract.dart
 import 'package:feature_landing_screen/src/data/data_sources/remote/contract.dart';
 import 'package:feature_landing_screen/src/data/fallback/landing_slides_fallback.dart';
 import 'package:feature_landing_screen/src/domain/models/landing_slide.build.dart';
-import 'package:feature_landing_screen/src/domain/repositories/repository_contract.dart';
+import 'package:feature_landing_screen/src/domain/repositories/contract.dart';
 
 class LandingScreenRepositoryImpl implements LandingScreenRepository {
   LandingScreenRepositoryImpl({
