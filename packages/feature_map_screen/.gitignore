@@ -30,3 +30,5 @@ Icon?
 
 # Native config with secrets
 android/local.properties
+ios/local.xcconfig
+ios/Classes/Generated/

@@ -1,4 +1,7 @@
 PODS:
+  - feature_map_screen (1.0.0):
+    - Flutter
+    - YandexMapsMobile
   - Flutter (1.0.0)
   - flutter_secure_storage_darwin (10.0.0):
     - Flutter
@@ -14,6 +17,7 @@ PODS:
   - YandexMapsMobile (4.22.0-lite)
 
 DEPENDENCIES:
+  - feature_map_screen (from `.symlinks/plugins/feature_map_screen/ios`)
   - Flutter (from `Flutter`)
   - flutter_secure_storage_darwin (from `.symlinks/plugins/flutter_secure_storage_darwin/darwin`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
@@ -25,6 +29,8 @@ SPEC REPOS:
     - YandexMapsMobile
 
 EXTERNAL SOURCES:
+  feature_map_screen:
+    :path: ".symlinks/plugins/feature_map_screen/ios"
   Flutter:
     :path: Flutter
   flutter_secure_storage_darwin:
@@ -37,6 +43,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/yandex_mapkit/ios"
 
 SPEC CHECKSUMS:
+  feature_map_screen: e4c5d737d3216a415dab1de1d1145fe854565465
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   flutter_secure_storage_darwin: acdb3f316ed05a3e68f856e0353b133eec373a23
   fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
@@ -44,6 +51,6 @@ SPEC CHECKSUMS:
   yandex_mapkit: bac34ca1bdf97e87252a8c6d09a95b1fe39ba103
   YandexMapsMobile: c73844c6096bbb240d1491adc511c2ef4a88d88d
 
-PODFILE CHECKSUM: 3c63482e143d1b91d2d2560aee9fb04ecc74ac7e
+PODFILE CHECKSUM: fc99b0be584f6c97f2a51d6b8a99ee108d851dfd
 
 COCOAPODS: 1.16.2
