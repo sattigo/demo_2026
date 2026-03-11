@@ -49,16 +49,17 @@ packages/
   feature_landing_screen/  # Landing-экран с каруселью
   feature_auth_screen/     # Экран авторизации (fake)
   feature_home_screen/     # Главный экран — список рецептов (реальный API)
+  feature_map_screen/      # Экран карты — Flutter-плагин с интеграцией Яндекс Карт (yandex_mapkit)
 ```
 
 ## Навигационный флоу
 
 ```
-/ (Splash) --push--> /landing --push--> /auth --go--> /home --go--> /fork
+/ (Splash) --push--> /landing --push--> /auth --go--> /home --go--> /map
 ```
 
 - `push` — сохраняет стек (назад можно): Splash, Landing
-- `go` — очищает стек: Auth, Home, Fork
+- `go` — очищает стек: Auth, Home, Map
 
 Навигация через `AppGoRoute`/`AppShellRoute` из `core_navigation` (обёртки над go_router). Голый `GoRoute` не использовать.
 
@@ -121,6 +122,35 @@ ChainPipeline.startWithValue(rawData)
   .transform(SomeTransformer())
   .getResult();
 ```
+
+## feature_map_screen — Flutter-плагин
+
+`feature_map_screen` является Flutter-плагином (объявлен в `pubspec.yaml` через `flutter.plugin`). Содержит нативный код для инициализации Яндекс Карт.
+
+### Android
+
+- `android/build.gradle` — читает `android/local.properties` (не в git), пробрасывает ключ в `BuildConfig.YANDEX_MAPKIT_API_KEY`
+- `android/src/main/kotlin/.../MapScreenPlugin.kt` — вызывает `MapKitFactory.setApiKey()` в `onAttachedToEngine`
+- `gradle.properties` приложения — `yandexMapkit.variant=lite`
+- `minSdk = 26` (требование yandex_mapkit)
+
+**Конфиг с ключом:** `packages/feature_map_screen/android/local.properties`
+```
+yandex.mapkit.api.key=<ключ>
+```
+
+### iOS
+
+- `ios/feature_map_screen.podspec` — при `pod install` генерирует `ios/Classes/Generated/MapScreenApiKey.swift` с ключом из `ios/local.xcconfig`
+- `ios/Classes/MapScreenPlugin.swift` — читает `MapScreenApiKey.value`, вызывает `YMKMapKit.setApiKey()`
+- `ios/Podfile` — `platform :ios, '13.0'`; в `post_install` → `GENERATE_INFOPLIST_FILE = NO`
+
+**Конфиг с ключом:** `packages/feature_map_screen/ios/local.xcconfig`
+```
+YANDEX_MAPKIT_API_KEY = <ключ>
+```
+
+> Оба файла конфига не в git (`.gitignore`). При клонировании репозитория нужно создать их вручную.
 
 ## Соглашения
 
