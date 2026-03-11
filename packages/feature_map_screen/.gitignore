@@ -27,3 +27,6 @@ build/
 Icon?
 
 # [ignorium] [END AUTO GENERATE SECTION]
+
+# Native config with secrets
+android/local.properties

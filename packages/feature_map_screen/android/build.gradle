@@ -1,0 +1,60 @@
+group 'com.sattigo.feature_map_screen'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0"
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+def localProperties = new Properties()
+def localPropertiesFile = new File(project.projectDir, 'local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withInputStream { stream -> localProperties.load(stream) }
+}
+
+def variant = project.hasProperty('yandexMapkit.variant') ? project.property('yandexMapkit.variant') : 'lite'
+
+android {
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.sattigo.feature_map_screen'
+    }
+
+    compileSdk 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    defaultConfig {
+        minSdk 26
+        buildConfigField "String", "YANDEX_MAPKIT_API_KEY", "\"${localProperties['yandex.mapkit.api.key']}\""
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.yandex.android:maps.mobile:4.6.1-${variant}"
+}
