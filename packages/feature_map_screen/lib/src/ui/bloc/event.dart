@@ -6,4 +6,6 @@ sealed class MapScreenEvent with _$MapScreenEvent {
   factory MapScreenEvent.locationPermissionRequested() = _MapScreenEventLocationPermissionRequested;
   factory MapScreenEvent.zoomInTapped() = _MapScreenEventZoomInTapped;
   factory MapScreenEvent.zoomOutTapped() = _MapScreenEventZoomOutTapped;
+  factory MapScreenEvent.mapTapped(Point? point) = _MapScreenEventMapTapped;
+  factory MapScreenEvent.buildRouteRequested() = _MapScreenEventBuildRouteRequested;
 }

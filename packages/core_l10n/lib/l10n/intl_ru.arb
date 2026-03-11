@@ -21,5 +21,7 @@
   "homeScreen_clickable_original_tryAgainButton": "Попробовать снова",
   "@homeScreen_clickable_original_tryAgainButton": {},
   "mapScreen_notClickable_original_appBarText": "Карта",
-  "@mapScreen_notClickable_original_appBarText": {}
+  "@mapScreen_notClickable_original_appBarText": {},
+  "mapScreen_clickable_original_buildRouteButton": "Построить пеший маршрут",
+  "@mapScreen_clickable_original_buildRouteButton": {}
 }

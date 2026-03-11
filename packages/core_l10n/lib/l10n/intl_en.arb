@@ -21,5 +21,7 @@
   "homeScreen_clickable_original_tryAgainButton": "Try again",
   "@homeScreen_clickable_original_tryAgainButton": {},
   "mapScreen_notClickable_original_appBarText": "Map",
-  "@mapScreen_notClickable_original_appBarText": {}
+  "@mapScreen_notClickable_original_appBarText": {},
+  "mapScreen_clickable_original_buildRouteButton": "Build walking route",
+  "@mapScreen_clickable_original_buildRouteButton": {}
 }

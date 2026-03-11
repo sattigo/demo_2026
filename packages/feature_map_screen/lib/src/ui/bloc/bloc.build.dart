@@ -15,6 +15,8 @@ class MapScreenBloc extends BaseBloc<MapScreenEvent, MapScreenState, MapScreenAc
     on<_MapScreenEventLocationPermissionRequested>(_onLocationPermissionRequested);
     on<_MapScreenEventZoomInTapped>(_onZoomInTapped);
     on<_MapScreenEventZoomOutTapped>(_onZoomOutTapped);
+    on<_MapScreenEventMapTapped>(_onMapTapped);
+    on<_MapScreenEventBuildRouteRequested>(_onBuildRouteRequested);
   }
 
   void _onMapCreated(_MapScreenEventMapCreated event, Emitter<MapScreenState> emit) {
@@ -39,5 +41,45 @@ class MapScreenBloc extends BaseBloc<MapScreenEvent, MapScreenState, MapScreenAc
 
   Future<void> _onZoomOutTapped(_MapScreenEventZoomOutTapped event, Emitter<MapScreenState> emit) async {
     await state.mapController?.moveCamera(CameraUpdate.zoomOut());
+  }
+
+  void _onMapTapped(_MapScreenEventMapTapped event, Emitter<MapScreenState> emit) {
+    emit(state.copyWith(tappedPoint: event.point, mapObjects: event.point != null ? state.mapObjects : []));
+  }
+
+  Future<void> _onBuildRouteRequested(_MapScreenEventBuildRouteRequested event, Emitter<MapScreenState> emit) async {
+    final destination = state.tappedPoint;
+    final userPosition = await state.mapController?.getUserCameraPosition();
+    if (destination == null || userPosition == null) {
+      return;
+    }
+
+    final resultWithSession = await YandexPedestrian.requestRoutes(
+      timeOptions: TimeOptions(departureTime: DateTime.now()),
+      fitnessOptions: const FitnessOptions(avoidSteep: false, avoidStairs: false),
+      points: [
+        RequestPoint(point: userPosition.target, requestPointType: RequestPointType.wayPoint),
+        RequestPoint(point: destination, requestPointType: RequestPointType.wayPoint),
+      ],
+    );
+
+    final result = await resultWithSession.$2;
+    if (result.error != null || result.routes == null || result.routes!.isEmpty) {
+      return;
+    }
+
+    final polylines = result.routes!
+        .asMap()
+        .entries
+        .map(
+          (entry) => PolylineMapObject(
+            mapId: MapObjectId('route_${entry.key}'),
+            polyline: entry.value.geometry,
+            strokeWidth: 3,
+          ),
+        )
+        .toList();
+
+    emit(state.copyWith(tappedPoint: null, mapObjects: polylines));
   }
 }
